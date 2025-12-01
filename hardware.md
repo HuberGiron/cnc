@@ -110,6 +110,8 @@ En esta sección se describen las conexiones físicas básicas para una CNC de 3
   - **Eje Y** → Ejemplo: mesa / base con husillo.
   - **Eje Z** → Ejemplo: mecanismo de cremallera, husillo o el eje vertical de tu herramienta.
 
+![Maquina ejemplo CNC](assets/img/x.jpg)
+
 ### 3.1. Motores con conector estándar
 
 Si estás usando motores NEMA con **conector estándar** (como los que suelen traer cable preensamblado):
@@ -176,3 +178,9 @@ Con estos pasos, la parte de **hardware y conexiones físicas** queda lista para
 - Cargar GRBL en el Arduino.
 - Configurar parámetros básicos.
 - Empezar a probar movimientos desde el software.
+
+---
+
+## Siguiente sección
+
+[Software (GRBL + OpenBuilds)](software.md)
