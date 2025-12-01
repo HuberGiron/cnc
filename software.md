@@ -53,6 +53,8 @@ En esta sección se explica cómo:
 
    ![Subir GRBL al Arduino](assets/img/x.jpg)
 
+
+
 6. Opcional: comprobar que GRBL está corriendo
    - Abre el **Monitor serie** de Arduino IDE.
    - Configura la velocidad en **115200 baudios**.
