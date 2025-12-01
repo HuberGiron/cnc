@@ -240,7 +240,7 @@ footer.site-footer { display: none !important; }
 .custom-footer{
   margin-top: 3rem;
   padding-top: 1rem;
-  border-top: 1px solid #e5e7eb;     /* separador sutil */
+  /* border-top: 1px solid #e5e7eb;     /* separador sutil */
   color: #6B7280;                     /* gris medio */
   font-size: 0.95rem;
   background: transparent;

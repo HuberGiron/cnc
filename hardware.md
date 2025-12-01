@@ -151,6 +151,7 @@ Si tus motores son bipolares de **4 cables sueltos**, primero debes identificar 
 Los finales de carrera mejoran la seguridad y permiten hacer **homing** automático.
 
 - Tipo recomendado: **microswitch mecánico con palanca**, usados en modo **NC** (normalmente cerrado).
+  ![Finales de carrera](assets/img/x.jpg)
 
 - Conexión típica en el CNC Shield (conector X-, Y-, Z-):
   - `C` del switch → **GND (G)**.
