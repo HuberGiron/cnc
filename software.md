@@ -228,7 +228,7 @@ Durante estas pruebas de jog, aprovecha para verificar:
   - Revisa que el eje mecánico no esté forzado o desalineado.
   - Más adelante ajustarás la corriente (Vref) del driver.
 - **Direcciones invertidas (X, Y o Z al revés)**:
-  - No es un error grave en esta etapa; se corrige luego desde los parámetros de GRBL.
+  - No es un error grave en esta etapa; se corrige invirtiendo el conector completo de cables del motor a pasos o desde los parámetros de GRBL.
 
 En la siguiente sección (Calibración) se explicará cómo:
 
