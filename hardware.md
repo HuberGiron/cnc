@@ -67,9 +67,7 @@ En esta sección se describen las conexiones físicas básicas para una CNC de 3
 3. Debajo de cada driver (X, Y, Z) coloca **tres jumpers** de microstepping:
    - MS1, MS2, MS3 → colocados → configurados para **1/16 de paso** (en A4988).
    - Esto hace que los movimientos sean más suaves y precisos, a costa de requerir más pasos por milímetro.
-   - **Nota:** Si no colocas los jumpers, el paso sera completo y:
-     - La máquina avanzará más rápido **con el mismo G-code**.
-     - Pero tendrás **menor resolución** y movimientos más bruscos.
+   - **Nota:** Si no colocas los jumpers, el paso sera completo y la máquina avanzará más rápido **con el mismo G-code**, pero tendrás **menor resolución** y movimientos más bruscos.
 
    ![Jumpers de microstepping](assets/img/x.jpg)
 

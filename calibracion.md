@@ -6,6 +6,11 @@ nav_order: 4
 
 # Calibración de la CNC
 
+*Antes de Configurar, hay que explicar donde esta la terminal y como enviaremos estos comandos utilizando el Openbuilds.
+   ![x](assets/img/x.jpg)
+
+*Hay que explicar la diferencia entre comandos de codigo G o ISO para lectura y los comandos para configurar y cambiar los parametros de  la maquina.
+
 ## 1. Concepto general
 
 Cada eje necesita un valor correcto de **steps/mm** para que:
