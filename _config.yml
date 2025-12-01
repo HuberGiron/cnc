@@ -1,5 +1,5 @@
-title: CNC Plotter - Manual de Uso
-description: Manual para configuración y operación de la CNC de dibujo con Arduino + GRBL
+title: CNC 
+description: Manual para configuración y operación de la CNC con Arduino + GRBL
 
 # ✅ Modo recomendado en GitHub Pages:
 remote_theme: just-the-docs/just-the-docs
@@ -18,7 +18,7 @@ just_the_docs:
 
 search_enabled: true
 search:
-  heading_level: 2
+  heading_level: 1
 
 aux_links:
   "Repositorio en GitHub":
