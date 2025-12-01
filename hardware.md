@@ -67,7 +67,7 @@ En esta sección se describen las conexiones físicas básicas para una CNC de 3
 3. Debajo de cada driver (X, Y, Z) coloca **tres jumpers** de microstepping:
    - MS1, MS2, MS3 → colocados → configurados para **1/16 de paso** (en A4988).
    - Esto hace que los movimientos sean más suaves y precisos, a costa de requerir más pasos por milímetro.
-   - **Nota:** Si no colocas los jumpers, el microstepping será menor (por ejemplo, paso completo) y:
+   - **Nota:** Si no colocas los jumpers, el paso sera completo y:
      - La máquina avanzará más rápido **con el mismo G-code**.
      - Pero tendrás **menor resolución** y movimientos más bruscos.
 
@@ -90,7 +90,7 @@ En esta sección se describen las conexiones físicas básicas para una CNC de 3
 
 - Conecta la fuente al borne de tornillo del CNC Shield:
   - `+` → positivo de la fuente.
-  - `GND` → negativo de la fuente.
+  - `-` o `GND` → negativo de la fuente.
 
 - El Arduino se alimenta por **USB** desde la computadora; la shield y los motores por la **fuente DC**:
   - Esto ayuda a separar el ruido de los motores de la lógica.
