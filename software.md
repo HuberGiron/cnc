@@ -58,7 +58,7 @@ En esta sección se explica cómo:
    - Configura la velocidad en **115200 baudios**.
    - Presiona el botón de reset del Arduino (o desconecta y conecta el USB).
    - Deberías ver un mensaje similar a:
-
+   
      ```text
      Grbl 1.1h ['$' for help]
      ```
