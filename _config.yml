@@ -1,0 +1,21 @@
+title: CNC Plotter – Manual de Uso
+description: Manual para configuración y operación de la CNC de dibujo con Arduino + GRBL
+remote_theme: just-the-docs/just-the-docs
+
+lang: es
+url: ""        # Ej: "https://hubergiron.github.io/"
+baseurl: ""    # Ej: "/cnc" si el repo se llama así
+
+color_scheme: light
+
+nav_sort: case_sensitive
+
+search_enabled: true
+
+aux_links:
+  "Repositorio en GitHub":
+    - "https://github.com/HuberGiron/cnc"
+
+just_the_docs:
+  logo: false
+  favicon: false
