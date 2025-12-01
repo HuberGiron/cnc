@@ -1,14 +1,14 @@
-title: CNC Plotter - Manual de Uso
-description: Manual para configuración y operación de la CNC de dibujo con Arduino + GRBL
+title: "Frontend - Web"
+description: Tutorial práctico con ejemplos embebidos usando Just the Docs
 
 # ✅ Modo recomendado en GitHub Pages:
 remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
 
-lang: es
-url: "https://hubergiron.github.io/"
-baseurl: "/cnc"
+# Si tu sitio es de proyecto:
+url: "https://hubergiron.github.io"
+baseurl: "/Html-Css-Js"
 
 just_the_docs:
   # incluir CSS adicional
@@ -22,7 +22,11 @@ search:
 
 aux_links:
   "Repositorio en GitHub":
-    - "https://github.com/HuberGiron/cnc"
+    - "https://github.com/HuberGiron/Html-Css-Js"
+
+# nav_external_links:
+#   - title: Documentación MDN
+#     url: https://developer.mozilla.org/
 
 # Enlaces
 permalink: pretty
