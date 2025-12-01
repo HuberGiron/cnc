@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Problemas comunes
-nav_order: 6
+nav_order: 7
 ---
 
 # Problemas comunes y soluciones
