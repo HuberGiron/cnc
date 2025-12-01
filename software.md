@@ -29,7 +29,7 @@ En esta sección se explica cómo:
 
 ## 2. Instalar GRBL 1.1h en el Arduino
 
-1. Descarga el ZIP de **GRBL 1.1** desde el repositorio oficial `gnea/grbl`.
+1. Descarga el ZIP de **GRBL 1.1** desde [aqui](assets/files/grbl.zip).
    - Guarda el archivo ZIP en una carpeta fácil de localizar.
 
 2. En Arduino IDE, agrega GRBL como librería:
