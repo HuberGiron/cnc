@@ -231,8 +231,8 @@ Puedes ajustar:
 
 3. Haz **Zero** en X, Y y Z desde OpenBuilds CONTROL (poner todos los ejes en 0).
 
-![Uso de los botones de jog y zero en OpenBuilds CONTROL](assets/img/control_pasos.png))
-![Uso de los botones de jog y zero en OpenBuilds CONTROL2](assets/img/mm_open.png))
+![Uso de los botones de jog y zero en OpenBuilds CONTROL](assets/img/control_pasos.png)
+![Uso de los botones de jog y zero en OpenBuilds CONTROL2](assets/img/mm_open.png)
 
 ### 7.2. Cargar el archivo `.nc`
 
