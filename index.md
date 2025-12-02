@@ -19,8 +19,7 @@ Este sitio documenta una **CNC de 3 ejes** basada en:
 2. [Software (GRBL + OpenBuilds)](software.md)  
 3. [Calibración](calibracion.md)
 4. [Primer archivo G-code (.nc)](primer-gcode.md) 
-5. [Flujo de trabajo con FabModules](flujo-fabmodules.md)  
-6. [Problemas comunes](problemas.md)  
+5. [Flujo de trabajo con FabModules](flujo-fabmodules.md) 
 
 ## Requisitos básicos
 - Acceso a:
