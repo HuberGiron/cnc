@@ -35,7 +35,7 @@ Guarda el archivo, por ejemplo:
 
 ## 2. Abrir el programa G-code / mill 2D en FabModules
 
-1. Abre **FabModules** en el navegador:[FabModules](../mods/)
+1. Abre **FabModules** en el navegador: [FabModules](../mods/)
 2. Haz clic derecho en el fondo blanco.  
    ![Menú principal de FabModules](assets/img/fabmodules-menu.png)
 3. Selecciona: **programs**.  

@@ -24,32 +24,32 @@ En esta sección se describen las conexiones físicas básicas para una CNC de 3
 - **Arduino UNO**  
   Microcontrolador que ejecuta GRBL y envía las señales de control a los drivers.
 
-  ![Arduino UNO](assets/img/x.jpg)
+  ![Arduino UNO](assets/img/arduino.jpg)
 
 - **CNC Shield V3**  
   Tarjeta que se monta sobre el Arduino y proporciona conectores para drivers, motores, finales de carrera y salidas de control.
 
-  ![CNC Shield V3](assets/img/x.jpg)
+  ![CNC Shield V3](assets/img/cnc_shield.jpg)
 
 - **Drivers A4988** (o similares) para X, Y, Z  
   Módulos que controlan la corriente de los motores paso a paso y permiten microstepping.
 
-  ![Drivers A4988](assets/img/x.jpg)
+  ![Drivers A4988](assets/img/a4988.jpg)
 
 - **Motores NEMA 17**  
   Motores paso a paso bipolares de 4 cables, típicos en impresoras 3D y CNC pequeñas.
 
-  ![Motores NEMA 17](assets/img/x.jpg)
+  ![Motores NEMA 17](assets/img/motor.png)
 
 - **Fuente de 12–24 V** para los motores  
   Alimenta los drivers y, por lo tanto, los motores. El Arduino se alimenta por USB.
 
-  ![Fuente DC](assets/img/x.jpg)
+  ![Fuente DC](assets/img/fuente.jpg)
 
 - **Finales de carrera** (opcional)  
   Interruptores que permiten detectar los límites físicos para homing y protección.
 
-  ![Finales de carrera](assets/img/x.jpg)
+  ![Finales de carrera](assets/img/switch.jpg)
 
 ---
 
