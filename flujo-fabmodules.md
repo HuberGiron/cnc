@@ -4,7 +4,7 @@ title: Flujo de trabajo con FabModules
 nav_order: 6
 ---
 
-# Flujo de trabajo con FabModules (PNG → G-code)
+# Flujo de trabajo con FabModules
 
 En esta sección veremos cómo pasar de una **imagen en blanco y negro (PNG)** a un archivo **G-code `.nc`** usando **FabModules**, y luego cómo enviarlo a la CNC con OpenBuilds CONTROL.
 
@@ -36,7 +36,8 @@ Guarda el archivo, por ejemplo:
 ## 2. Abrir el programa G-code / mill 2D en FabModules
 
 1. Abre **FabModules** en el navegador.
-2. Haz clic en el icono de menú (cuadro azul/rojo).  
+   ![FabModules](mods/)
+2. Haz clic derecho en el fondo blanco.  
    ![Menú principal de FabModules](assets/img/fabmodules-menu.png)
 3. Selecciona: **programs**.  
    ![Menú programs en FabModules](assets/img/fabmodules-programs.png)
