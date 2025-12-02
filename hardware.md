@@ -62,14 +62,14 @@ En esta sección se describen las conexiones físicas básicas para una CNC de 3
    - Verifica la **orientación correcta** (pines EN, STEP, DIR, VDD, GND deben coincidir con la serigrafía de la shield).
    - Normalmente el **potenciómetro** del driver queda orientado hacia el conector de alimentación de la shield.
 
-   ![CNC Shield y drivers](assets/img/x.jpg)
+   ![CNC Shield y drivers](assets/img/shield_conectado.jpg)
 
 3. Debajo de cada driver (X, Y, Z) coloca **tres jumpers** de microstepping:
    - MS1, MS2, MS3 → colocados → configurados para **1/16 de paso** (en A4988).
    - Esto hace que los movimientos sean más suaves y precisos, a costa de requerir más pasos por milímetro.
    - **Nota:** Si no colocas los jumpers, el paso sera completo y la máquina avanzará más rápido **con el mismo G-code**, pero tendrás **menor resolución** y movimientos más bruscos.
 
-   ![Jumpers de microstepping](assets/img/x.jpg)
+   ![Jumpers de microstepping](assets/img/jumper.jpg)
 
 > ⚠️ No insertes ni retires drivers A4988 con la fuente energizada. Siempre apaga y desconecta la alimentación antes de manipularlos.
 
@@ -99,7 +99,7 @@ En esta sección se describen las conexiones físicas básicas para una CNC de 3
 > - Polaridad correcta.
 > - Voltaje dentro del rango esperado.
 
-![Conexión de fuente a la shield](assets/img/x.jpg)
+![Conexión de fuente a la shield](assets/img/fuente_c.jpg)
 
 ---
 
@@ -110,7 +110,7 @@ En esta sección se describen las conexiones físicas básicas para una CNC de 3
   - **Eje Y** → Ejemplo: mesa / base con husillo.
   - **Eje Z** → Ejemplo: mecanismo de cremallera, husillo o el eje vertical de tu herramienta.
 
-![Maquina ejemplo CNC](assets/img/x.jpg)
+![Maquina ejemplo CNC](assets/img/cnc.jpg)
 
 ### 3.1. Motores con conector estándar
 
@@ -119,7 +119,8 @@ Si estás usando motores NEMA con **conector estándar** (como los que suelen tr
 - Normalmente basta con insertar el conector en el puerto correspondiente (X, Y, Z) de la shield.
 - En muchos cables, el **cable rojo** queda en la parte superior del conector en la shield (pero esto puede variar según fabricante; revisa el datasheet si es posible).
 
-![Motor con conector estándar](assets/img/x.jpg)
+![Motor con conector estándar](assets/img/motor_estandar.jpg)
+![Motor con conector estándar2](assets/img/cables_motor.jpg)
 
 ### 3.2. Motores bipolares de 4 cables sin conector estándar
 
@@ -140,8 +141,6 @@ Si tus motores son bipolares de **4 cables sueltos**, primero debes identificar 
 3. Si al hacer un jog el motor **tiembla pero no gira**, probablemente los cables estén cruzados o las bobinas invertidas:
    - Cambia el orden de los cables (por ejemplo intercambiando A y B) hasta que el giro sea suave y continuo.
 
-![Conexión de motor con cables sueltos](assets/img/x.jpg)
-
 > ⚠️ No conectes ni desconectes los motores con la fuente encendida; puedes dañar tanto el driver como el motor.
 
 ---
@@ -151,14 +150,15 @@ Si tus motores son bipolares de **4 cables sueltos**, primero debes identificar 
 Los finales de carrera mejoran la seguridad y permiten hacer **homing** automático.
 
 - Tipo recomendado: **microswitch mecánico con palanca**, usados en modo **NC** (normalmente cerrado).
-  ![Finales de carrera](assets/img/x.jpg)
+
+  ![Finales de carrera](assets/img/switch.jpg)
 
 - Conexión típica en el CNC Shield (conector X-, Y-, Z-):
   - `C` del switch → **GND (G)**.
   - `NC` del switch → **S (Signal)**.
   - Deja sin conectar el pin de **+5 V**.
 
-![Conexión de finales de carrera](assets/img/x.jpg)
+![Conexión de finales de carrera](assets/img/finales_c.jpg)
 
 Usar NC tiene varias ventajas:
 
