@@ -307,7 +307,7 @@ $122=20     ; Z acceleration 20 mm/s^2
 
 ---
 
-## 7. Homing y límites (Opcional)
+## 7. (Opcional) Homing y límites 
 
 Si tienes **finales de carrera** instalados, es muy recomendable activar:
 
