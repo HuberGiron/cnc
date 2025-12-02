@@ -4,77 +4,262 @@ title: Flujo de trabajo con FabModules
 nav_order: 6
 ---
 
-# Flujo de trabajo con FabModules
+# Flujo de trabajo con FabModules (PNG → G-code)
 
-Este flujo describe cómo pasar de un diseño 2D (SVG) a **G-code** y luego dibujarlo en la CNC.
+En esta sección veremos cómo pasar de una **imagen en blanco y negro (PNG)** a un archivo **G-code `.nc`** usando **FabModules**, y luego cómo enviarlo a la CNC con OpenBuilds CONTROL.
 
-## 1. Diseñar y exportar SVG
+Nos centraremos en:
 
-Puedes diseñar en:
+- Logos o dibujos sencillos (por ejemplo, un círculo o las letras **IBERO**).
+- Imágenes en **blanco y negro**, sin escala de grises.
+- Proceso **G-code → mill 2D** dentro de FabModules.
 
-- **Tinkercad** (vista superior, 2D).
-- **Inkscape** u otro editor vectorial.
+---
 
-Pasos generales:
+## 1. Preparar la imagen PNG
 
-1. Diseña la figura (contornos, logos, textos convertidos a curvas).
-2. Exporta como **SVG**:
-   - En Tinkercad: `Export → .SVG`.
-   - En Inkscape: `Archivo → Guardar como → SVG`.
+Puedes crear tu imagen en cualquier editor (Inkscape, GIMP, Krita, etc.) y exportarla como **PNG** en blanco y negro.
 
-## 2. Escalar y preparar el SVG (Inkscape)
+Recomendaciones:
 
-1. Abre el SVG en **Inkscape**.
-2. Cambia las unidades a **mm** (barra superior).
-3. Selecciona todo el dibujo (`Ctrl + A`).
-4. Escala para que quepa en tu área de trabajo (usando ~80% de margen):
-   - Ancho máximo ≈ **80 mm**.
-   - Alto máximo ≈ **56 mm**.
-5. Con el dibujo seleccionado:
-   - `Trayecto → Objeto a trayecto` (convertir a curvas).
-6. Guarda el SVG.
+- Fondo **blanco** y trazos **negros** (o al revés; luego podemos invertir).
+- Sin degradados ni sombras; solo líneas y rellenos sólidos.
+- Resolución suficiente (por ejemplo 500 dpi), pero no es crítico mientras se vea nítido.
 
-## 3. Generar G-code con FabModules
+Guarda el archivo, por ejemplo:
 
-1. Abre **FabModules** (web o local).
-2. En `input format` selecciona:
-   - `SVG` y carga tu archivo.
-3. En `output format` selecciona:
-   - Alguna opción de **G-code** genérico (depende de la versión de FabModules, puede ser “.nc (gcode)”).
-4. Selecciona un proceso 2D (outline / profiling):
-   - Profundidad final (`z final`) muy pequeña (dibujar, no fresar):
-     - Ejemplo: `z final = -0.1 mm`.
-   - Altura de viaje (`z up`) suficiente:
-     - Ejemplo: `z up = 5 mm`.
-   - Feedrate (velocidad de avance):
-     - Ejemplo: `400–600 mm/min`.
-   - Unidades: **mm**.
-5. Haz clic en **calculate / generate**.
-6. Guarda el archivo resultante (`.nc` o `.gcode`), por ejemplo:  
-   `dibujo_fabmodules.nc`.
+- `circulo.png`
+- `ibero.png`
 
-## 4. Enviar el G-code a la CNC (OpenBuilds CONTROL)
+---
 
-1. Abre **OpenBuilds CONTROL**.
-2. Conecta al GRBL (Arduino).
-3. Coloca el papel y ajusta la posición inicial del lápiz.
-4. Haz **Zero** en:
-   - **X** y **Y** → donde quieres que esté el origen del diseño.
-   - **Z** → en el punto donde el lápiz apenas toca el papel (por ejemplo Z=0).
-5. Carga el archivo `dibujo_fabmodules.nc`.
-6. Revisa la vista previa:
-   - Tamaño y posición del dibujo.
-7. Pulsa **Start**:
-   - La máquina debe:
-     - Subir Z a la altura de viaje (z up).
-     - Bajar Z a la altura de dibujo (z final) para trazar.
-     - Respetar el área de trabajo calibrada.
+## 2. Abrir el programa G-code / mill 2D en FabModules
 
-## 5. Ajustes frecuentes
+1. Abre **FabModules** en el navegador.
+2. Haz clic en el icono de menú (cuadro azul/rojo).  
+   ![Menú principal de FabModules](assets/img/fabmodules-menu.png)
+3. Selecciona: **programs**.  
+   ![Menú programs en FabModules](assets/img/fabmodules-programs.png)
+4. En la lista, ve a:
 
-- Si el dibujo sale **muy pequeño / grande**:
-  - Revisa la escala en Inkscape.
-  - Revisa si FabModules está usando mm o unidades distintas.
-- Si el dibujo sale **desplazado**:
-  - Cambia el punto de **Zero** en la CNC.
-  - O reposiciona la figura en Inkscape (mover el diseño dentro del lienzo).
+   ```text
+   machines → G-code → mill 2D
+   ```
+
+   ![Selección de G-code mill 2D](assets/img/fabmodules-programs-gcode-mill2d.png)
+
+5. Elige **open program** para cargar el programa `G-code mill 2D`.  
+   ![Ventana de open program](assets/img/fabmodules-open-program.png)
+
+Deberías ver un “grafo” con varios módulos conectados (read png, image ops, mill 2D, path to G-code, save file…).  
+![Programa completo G-code mill 2D](assets/img/fabmodules-graph-overview.png)
+
+---
+
+## 3. Cargar la imagen PNG
+
+En el módulo **read png**:
+
+1. Haz clic en el botón **select png file**.
+2. Elige tu archivo, por ejemplo `ibero.png` o `circulo.png`.
+3. Verás la vista previa de la imagen, junto con información de tamaño y dpi.
+
+![Módulo read png con la imagen cargada](assets/img/fabmodules-read-png.png)
+
+Opciones útiles en este módulo:
+
+- **invert** → invierte blanco/negro (útil si tu dibujo está en negativo).
+- **flip H / flip V** → espejar horizontal o verticalmente.
+- **rotate 90CW** → rotar si la imagen entra girada.
+
+### 3.1. Ajustar el tamaño en mm
+
+Debajo de la imagen suelen aparecer:
+
+- Resolución (dpi).  
+- Tamaño en píxeles.  
+- Tamaño en **mm**.
+
+Puedes:
+
+- Cambiar el valor de **dpi** para ajustar el tamaño en mm (más dpi = más pequeño, menos dpi = más grande).
+- Usar como referencia tu área útil de trabajo (por ejemplo 100×70 mm, y usar ~80% de ese espacio).
+
+> 💡 Ejemplo: si quieres que el logo **IBERO** tenga ~60 mm de ancho, ajusta el dpi hasta que el ancho en mm se aproxime a 60.
+
+---
+
+## 4. Opcional: operaciones de imagen
+
+Dependiendo del programa `mill 2D` que uses, puede haber módulos intermedios como:
+
+- `image threshold`
+- `edge detect`
+- etc.
+
+En muchos casos, con una imagen en blanco y negro bien preparada basta con:
+
+- Ajustar **threshold** si lo hay (para reforzar el contraste).
+- Ver en la vista previa que las líneas se ven claras y limpias.
+
+Si el flujo que cargas ya está preparado (como en el ejemplo de las capturas), usualmente no necesitas modificar mucho estos módulos.
+
+---
+
+## 5. Configurar el módulo Mill 2D / Mill raster 2D
+
+Localiza el módulo **mill 2D** o **mill raster 2D** (nombre depende de la versión).  
+Se ve parecido a esto:
+
+![Módulo mill raster 2D](assets/img/fabmodules-mill2d.png)
+
+Parámetros importantes:
+
+- **tool diameter (mm)**  
+  - Diámetro efectivo de tu herramienta.  
+  - Para un plumín o lápiz fino puedes usar valores pequeños (ej. 0.3–0.5 mm).
+- **cut depth (mm)**  
+  - Profundidad por pasada.  
+  - Para **dibujo** suele ser muy pequeña (ej. 0.05–0.10 mm) o igual a la profundidad final.
+- **max depth (mm)**  
+  - Profundidad final.  
+  - Para dibujo: un valor muy pequeño negativo (ej. `-0.1 mm`) si quieres que quede registrado como corte superficial.
+- **offset number**  
+  - `1` → recorre solo el contorno principal (esto es lo que nos interesa).  
+  - `0` → relleno completo (fill), suele generar muchas trayectorias.
+- **offset stepover**  
+  - Para un solo contorno, 0.5 está bien (no es tan crítico en modo dibujo).
+- **direction** (climb / conventional) y **path order** (forward / reverse)  
+  - Para un plumín no importa demasiado, pero para fresado sí.
+
+Flujo de uso:
+
+1. Ajusta **tool diameter**, **cut depth**, **max depth** y pon **offset number = 1**.
+2. Haz clic en **calculate**.
+3. Si hay botón **view**, úsalo para ver la trayectoria (toolpath) sobre la imagen.
+
+![Vista del toolpath calculado](assets/img/fabmodules-mill2d-toolpath.png)
+
+---
+
+## 6. Configurar Path to G-code
+
+Ahora localiza el módulo **path to G-code**:
+
+![Módulo path to G-code](assets/img/fabmodules-path-to-gcode.png)
+
+Parámetros clave:
+
+- **cut speed (mm/s)**  
+  - Velocidad de corte.  
+  - Para dibujo/pluma: valores de 1–3 mm/s son suaves (equivalen a 60–180 mm/min).
+- **plunge speed (mm/s)**  
+  - Velocidad al bajar en Z.  
+  - Puedes usar algo similar a cut speed (1–2 mm/s).
+- **jog height (mm)**  
+  - Altura de seguridad cuando la herramienta se desplaza “en vacío”.  
+  - Ejemplo: **5 mm** para evitar golpear el papel o pinzas.
+- **spindle (RPM)**  
+  - Para dibujo con lápiz puedes dejar el valor por defecto; no se usará si no controlas el spindle.
+- **format**  
+  - Asegúrate de seleccionar **mm** (no inch).
+
+Cuando estés conforme:
+
+1. Confirma que **format = mm**.
+2. Ajusta **jog height** (por ejemplo 5 mm).
+3. Haz clic en **calculate** para que genere el archivo G-code interno.
+
+---
+
+## 7. Exportar el archivo `.nc`
+
+Al final del flujo debe haber un módulo de **save file** (o botón similar) conectado a `path to G-code`:
+
+![Módulo save file en FabModules](assets/img/fabmodules-save-file.png)
+
+Pasos:
+
+1. Haz clic en **save file** (o `save .nc`, según la versión).
+2. Elige una carpeta de destino.
+3. Pon un nombre descriptivo, por ejemplo:
+   - `circulo_fabmodules.nc`
+   - `ibero_fabmodules.nc`
+
+Ya tienes un archivo G-code listo para enviar a la CNC.
+
+---
+
+## 8. Cargar el `.nc` en OpenBuilds CONTROL y probar
+
+Ahora seguimos un flujo muy parecido al del cuadrado simple.
+
+### 8.1. Preparar la máquina
+
+1. Abre **OpenBuilds CONTROL** y conéctate a tu placa GRBL.
+2. Coloca el **papel o material** donde se dibujará el logo.
+3. Mueve la máquina con los controles de **jog** hasta el punto donde quieres el **origen (X0, Y0)** del dibujo:
+   - Para un círculo, normalmente el origen será alguna esquina del área de dibujo (según cómo esté definido en FabModules).
+   - Para las letras IBERO, puedes tomar la esquina inferior izquierda del texto.
+4. Ajusta **Z** para que el plumín o lápiz:
+   - Toque suavemente el papel (para prueba real), o
+   - Quede 2–3 mm por encima (para una “prueba en el aire”).
+
+5. Haz **Zero** en X, Y y Z desde OpenBuilds CONTROL.
+
+![Setear ceros en OpenBuilds CONTROL](assets/img/openbuilds-zero.png)
+
+### 8.2. Cargar y revisar el archivo
+
+1. Haz clic en **Open File / Cargar archivo**.
+2. Selecciona tu archivo `ibero_fabmodules.nc` o `circulo_fabmodules.nc`.
+3. Revisa la **vista previa**:
+
+   - El tamaño debe coincidir aproximadamente con lo esperado (por ejemplo, 60 mm de ancho para IBERO).
+   - El origen del dibujo debe estar donde esperabas (esquina u origen del diseño).
+
+![Vista previa del diseño importado](assets/img/openbuilds-preview-fabmodules.png)
+
+### 8.3. Ejecutar el programa
+
+1. Para la **primera prueba**, es recomendable:
+
+   - Dejar Z un poco más alta (por ejemplo +2 mm) para que la pluma no toque el papel, o
+   - Editar en FabModules la profundidad (max depth) a 0 y solo observar el movimiento.
+
+2. Cuando estés listo, presiona **Start / Run** en OpenBuilds.
+
+3. Observa:
+
+   - El eje Z sube a la **jog height** definida en FabModules.
+   - Baja a la profundidad de dibujo y sigue el contorno de la imagen.
+   - Una vez terminado, vuelve a la altura de seguridad.
+
+Si todo se ve bien, ajusta Z para que el lápiz toque el papel y repite la ejecución para obtener el trazo real.
+
+---
+
+## 9. Notas y ajustes frecuentes
+
+- **Escala incorrecta**  
+  - Revisa el dpi y tamaño en mm en el módulo **read png**.
+  - Confirma que `format = mm` en **path to G-code**.
+- **El dibujo sale invertido (blanco/negro al revés)**  
+  - Usa el botón **invert** en el módulo **read png**.
+- **El origen no coincide**  
+  - Cambia dónde haces **Zero** en la máquina.
+  - O re-centra la imagen en el lienzo antes de generar el G-code.
+- **Demasiadas pasadas o rellenos**  
+  - Asegúrate de que **offset number = 1** en el módulo **mill 2D / mill raster 2D**.
+
+Con este flujo puedes convertir fácilmente logos simples (como un círculo o las letras IBERO) en G-code y dibujarlos en tu CNC.
+
+---
+
+## Siguiente paso
+
+Una vez que domines este procedimiento, puedes:
+
+- Probar diferentes imágenes en blanco y negro.
+- Ajustar diámetros de herramienta y profundidades para pasar de “dibujo” a “grabado ligero”.
+- Integrar este flujo en ejercicios de clase donde los estudiantes diseñen sus propios logos o patrones.
