@@ -195,7 +195,7 @@ Si el eje Y se comporta diferente (más lento, más ruidoso) puede ser por:
    - **Z+** debería alejar la herramienta de la pieza (subir).
    - **Z−** debería acercarla a la pieza (bajar).
 
-   ![Movimiento de prueba en eje Z](assets/img/x.jpg)
+c
 
 se corrige invirtiendo el conector completo de cables del motor a pasos o desde los parámetros de GRBL.
 

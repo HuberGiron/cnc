@@ -34,7 +34,7 @@ Comandos clave:
 
 ---
 
-## 1. Concepto general de steps/mm
+## 1. Calibrar pasos de motor a mm: steps/mm
 
 GRBL convierte los movimientos en **pasos de motor**. Cada motor paso a paso tiene:
 
@@ -51,7 +51,7 @@ steps/mm = (pasos_motor_por_vuelta × microsteps × relación_extra) / avance_mm
 Donde:
 
 - `pasos_motor_por_vuelta` → típicamente 200 para NEMA 17.
-- `microsteps` → depende de cómo pusiste los jumpers MS1–MS2–MS3 (por ejemplo, 16 para 1/16 de paso).
+- `microsteps` → depende de cómo pusiste los jumpers MS1–MS2–MS3 (por ejemplo, 16 para 1/16 de paso o 1 si no tienes ningun jumper).
 - `relación_extra` → se usa si hay alguna relación mecánica adicional (por ejemplo poleas 2:1). Si no hay, vale 1.
 - `avance_mm_por_vuelta` → cuántos mm se mueve el eje por **una vuelta completa** del motor o del mecanismo.
 
@@ -78,7 +78,7 @@ Fórmula:
 steps/mm = (pasos_motor_por_vuelta × microsteps × relación_extra) / lead_mm
 ```
 
-Ejemplo (muy típico):
+Ejemplo:
 
 - Motor: 200 pasos/vuelta
 - Microstepping: 1/16 → `microsteps = 16`
@@ -177,7 +177,9 @@ steps/mm ≈ (200 × 16) / 62.83 ≈ 50.96 steps/mm
 
 Siempre es recomendable ajustar por medición, aunque hayas calculado steps/mm con fórmulas. El procedimiento es el mismo para cualquier eje (X, Y o Z) y cualquier mecanismo (husillo, banda, cremallera).
 
-### 5.1. Preparación
+### 5.1. Preparación (En la ventana de comando de OpenBuilds CONTROL)
+
+   ![ventana de comando de OpenBuilds CONTROL](assets/img/x.jpg)
 
 1. Asegúrate de estar en **milímetros** y modo **absoluto**:
 
@@ -187,8 +189,6 @@ Siempre es recomendable ajustar por medición, aunque hayas calculado steps/mm c
    ```
 
 2. Lleva el eje a una posición de referencia (por ejemplo, cerca de un extremo físico) y pon marcas donde puedas medir con una regla o calibrador.
-
-3. Haz cero en ese eje (desde el sender o con `G92`, según tu flujo).
 
 ---
 
@@ -200,7 +200,7 @@ Siempre es recomendable ajustar por medición, aunque hayas calculado steps/mm c
    ```gcode
    G1 X10 F150   ; ejemplo en eje X
    ```
-
+   
 3. Mide con la regla/calibrador la **distancia real** que se movió el eje (D_medida).
 
 - Distancia comandada = `D_comandada` (ej. 10 mm).
