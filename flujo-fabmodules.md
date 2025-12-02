@@ -134,7 +134,7 @@ Flujo de uso:
 
 1. Ajusta **tool diameter**, **cut depth**, **max depth** y pon **offset number = 1**.
 2. Haz clic en **calculate**.
-3. Si hay botón **view**, úsalo para ver la trayectoria (toolpath) sobre la imagen.
+
 ---
 
 ## 6. Configurar Path to G-code
