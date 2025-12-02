@@ -47,7 +47,7 @@ Guarda el archivo, por ejemplo:
    machines → G-code → mill 2D
    ```
 
-   ![Selección de G-code mill 2D](assets/img/mods/0.png.png)
+   ![Selección de G-code mill 2D](assets/img/mods/0.png)
 
 Deberías ver un “grafo” con varios módulos conectados (read png, image ops, mill 2D, path to G-code, save file…).  
 ![Programa completo G-code mill 2D](assets/img/mods/1.png)
