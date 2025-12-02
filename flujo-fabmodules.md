@@ -35,8 +35,7 @@ Guarda el archivo, por ejemplo:
 
 ## 2. Abrir el programa G-code / mill 2D en FabModules
 
-1. Abre **FabModules** en el navegador.
-   ![FabModules](mods/)
+1. Abre **FabModules** en el navegador: [FabModules](mods/)
 2. Haz clic derecho en el fondo blanco.  
    ![Menú principal de FabModules](assets/img/fabmodules-menu.png)
 3. Selecciona: **programs**.  
@@ -86,6 +85,9 @@ Puedes:
 - Usar como referencia tu área útil de trabajo (por ejemplo 100×70 mm, y usar ~80% de ese espacio).
 
 > 💡 Ejemplo: si quieres que el logo **IBERO** tenga ~60 mm de ancho, ajusta el dpi hasta que el ancho en mm se aproxime a 60.
+
+![IBERO png](assets/img/fabmodules-read-png.png)
+
 
 ---
 
