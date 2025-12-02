@@ -28,30 +28,29 @@ Recomendaciones:
 
 Guarda el archivo, por ejemplo:
 
-- `circulo.png`
-- `ibero.png`
+- `circulo.png` Descarga: [imagen](assets/img/G_code/circulo.png) [nc](assets/img/G_code/circulo.nc)
+- `ibero.png` Descarga: [imagen](assets/img/G_code/IBERO.png) [nc](assets/img/G_code/IBERO.nc)
 
 ---
 
 ## 2. Abrir el programa G-code / mill 2D en FabModules
 
 1. Abre **FabModules** en el navegador: [FabModules](../mods/)
-2. Haz clic derecho en el fondo blanco.  
-   ![Menú principal de FabModules](assets/img/fabmodules-menu.png)
+2. Haz clic derecho en el fondo blanco.
 3. Selecciona: **programs**.  
-   ![Menú programs en FabModules](assets/img/fabmodules-programs.png)
+   ![Menú programs en FabModules](assets/img/mods/00.png)
 4. Elige **open program** para cargar el programa `G-code mill 2D`.  
-   ![Ventana de open program](assets/img/fabmodules-open-program.png)
+   ![Ventana de open program](assets/img/mods/001.png)
 5. En la lista, ve a:
 
    ```text
    machines → G-code → mill 2D
    ```
 
-   ![Selección de G-code mill 2D](assets/img/fabmodules-programs-gcode-mill2d.png)
+   ![Selección de G-code mill 2D](assets/img/mods/0.png.png)
 
 Deberías ver un “grafo” con varios módulos conectados (read png, image ops, mill 2D, path to G-code, save file…).  
-![Programa completo G-code mill 2D](assets/img/fabmodules-graph-overview.png)
+![Programa completo G-code mill 2D](assets/img/mods/1.png)
 
 ---
 
@@ -63,7 +62,7 @@ En el módulo **read png**:
 2. Elige tu archivo, por ejemplo `ibero.png` o `circulo.png`.
 3. Verás la vista previa de la imagen, junto con información de tamaño y dpi.
 
-![Módulo read png con la imagen cargada](assets/img/fabmodules-read-png.png)
+![Módulo read png con la imagen cargada](assets/img/mods/2.png)
 
 Opciones útiles en este módulo:
 
@@ -85,9 +84,6 @@ Puedes:
 - Usar como referencia tu área útil de trabajo (por ejemplo 100×70 mm, y usar ~80% de ese espacio).
 
 > 💡 Ejemplo: si quieres que el logo **IBERO** tenga ~60 mm de ancho, ajusta el dpi hasta que el ancho en mm se aproxime a 60.
-
-![IBERO png](assets/img/fabmodules-read-png.png)
-
 
 ---
 
@@ -113,7 +109,7 @@ Si el flujo que cargas ya está preparado (como en el ejemplo de las capturas), 
 Localiza el módulo **mill 2D** o **mill raster 2D** (nombre depende de la versión).  
 Se ve parecido a esto:
 
-![Módulo mill raster 2D](assets/img/fabmodules-mill2d.png)
+![Módulo mill raster 2D](assets/img/mods/3.png)
 
 Parámetros importantes:
 
@@ -139,16 +135,13 @@ Flujo de uso:
 1. Ajusta **tool diameter**, **cut depth**, **max depth** y pon **offset number = 1**.
 2. Haz clic en **calculate**.
 3. Si hay botón **view**, úsalo para ver la trayectoria (toolpath) sobre la imagen.
-
-![Vista del toolpath calculado](assets/img/fabmodules-mill2d-toolpath.png)
-
 ---
 
 ## 6. Configurar Path to G-code
 
 Ahora localiza el módulo **path to G-code**:
 
-![Módulo path to G-code](assets/img/fabmodules-path-to-gcode.png)
+![Módulo path to G-code](assets/img/mods/4.png)
 
 Parámetros clave:
 
@@ -178,7 +171,7 @@ Cuando estés conforme:
 
 Al fterminar de configurar el flujo dale al boton de calcular en mill raster 2D y el archivo **.nc** se descargara automaticamen. :
 
-![Módulo save file en FabModules](assets/img/fabmodules-save-file.png)
+![Módulo save file en FabModules](assets/img/mods/nuevo.png)
 
 Ya tienes un archivo G-code listo para enviar a la CNC.
 
@@ -199,21 +192,21 @@ Ahora seguimos un flujo muy parecido al del cuadrado simple.
 
 5. Haz **Zero** en X, Y y Z desde OpenBuilds CONTROL.
 
-![Setear ceros en OpenBuilds CONTROL](assets/img/openbuilds-zero.png)
+![Setear ceros en OpenBuilds CONTROL](assets/img/mm_open.png)
 
 ### 8.2. Cargar y revisar el archivo
 
 1. Haz clic en **Open File / Cargar archivo**.
 2. Selecciona tu archivo `ibero.nc` o `circulo.nc`.
 3. Revisa el **Gcode Editor** para ver el codigo G generado por FabModules.
-![Vista previa del codigo](assets/img/openbuilds-preview-fabmodules.png)
+![Vista previa del codigo](assets/img/run.png)
 
 4. Revisa la **vista previa** o **3D View**:
 
    - El tamaño debe coincidir aproximadamente con lo esperado (por ejemplo, 60 mm de ancho para IBERO).
    - El origen del dibujo debe estar donde esperabas (esquina u origen del diseño).
 
-![Vista previa del diseño importado](assets/img/openbuilds-preview-fabmodules.png)
+![Vista previa del diseño importado](assets/img/vista_previa.png)
 
 ### 8.3. Ejecutar el programa
 
@@ -223,6 +216,8 @@ Ahora seguimos un flujo muy parecido al del cuadrado simple.
    - Editar en FabModules la profundidad (max depth) a 0 y solo observar el movimiento.
 
 2. Cuando estés listo, presiona **Start / Run** en OpenBuilds.
+
+![Run](assets/img/run.png)
 
 3. Observa:
 
