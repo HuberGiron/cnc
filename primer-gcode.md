@@ -217,7 +217,7 @@ Puedes ajustar:
 ## 7. Probar el archivo en OpenBuilds CONTROL
 
 > ⚠️ **Antes de ejecutar:** Asegúrate de que la máquina ya está:
-> - Con **steps/mm** razonablemente calibrados.
+> - Con **steps/mm** calibrados.
 > - Con los ejes libres de obstáculos.
 > - Con velocidades y aceleraciones moderadas (ver sección de Calibración).
 
@@ -265,24 +265,7 @@ Si todo se ve bien, puedes:
 
 ---
 
-## 8. Variantes útiles del mismo cuadrado
-
-Una vez que tengas el cuadrado funcionando, puedes jugar con:
-
-### 8.1. Cambiar el tamaño
-
-```gcode
-G1 X30 Y0     (lado inferior de 30 mm)
-G1 X30 Y30
-G1 X0  Y30
-G1 X0  Y0
-```
-
-### 8.2. Cambiar el origen
-
-Puedes decidir que el origen esté en el **centro** de la figura, y recalcular las coordenadas (por ejemplo de -10 a +10). Esto ayuda en algunos flujos de trabajo donde ubicas el origen en el centro de la pieza.
-
-### 8.3. Cambiar la profundidad o hacer varias pasadas
+## 8. Cambiar la profundidad o hacer varias pasadas
 
 Para mecanizado, puedes hacer varias pasadas en Z (ejemplo):
 
@@ -297,18 +280,6 @@ G1 Z-1.0 F100   (segunda pasada más profunda)
 
 ---
 
-## Sugerencias de fotos para esta sección
-
-- Captura de pantalla de la **consola de OpenBuilds** con algunos comandos G (`G21`, `G90`, `G0`, `G1`).  
-- Diagrama simple del **cuadrado 20×20 mm** con el origen marcado en la esquina inferior izquierda.  
-- Foto de la **máquina dibujando el cuadrado** en papel o material.  
-- Captura de **VS Code o Bloc de notas** con el programa `cuadrado_20mm.nc` abierto.  
-- Captura de la **vista previa** en OpenBuilds CONTROL mostrando el cuadrado.
-
-Puedes reutilizar `assets/img/x.jpg` como marcador temporal y luego reemplazarlo por tus propias fotos y capturas de pantalla.
-
----
-
 ## Siguiente sección
 
-[Flujo de trabajo con FabModules (SVG → G-code)](flujo-fabmodules.md)
+[Flujo de trabajo con FabModules (PNG → G-code)](flujo-fabmodules.md)

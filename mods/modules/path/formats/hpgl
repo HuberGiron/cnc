@@ -1,0 +1,117 @@
+//
+// path to HPGL
+//
+// Neil Gershenfeld 
+// (c) Massachusetts Institute of Technology 2021
+// 
+// This work may be reproduced, modified, distributed, performed, and 
+// displayed for any purpose, but must acknowledge the mods
+// project. Copyright is retained and must be preserved. The work is 
+// provided as is; no warranty is provided, and users accept all 
+// liability.
+//
+// closure
+//
+
+
+(function(){
+//
+// module globals
+//
+var mod = {}
+//
+// name
+//
+var name = 'path to HPGL (unfinished)'
+//
+// initialization
+//
+var init = function() {
+   }
+//
+// inputs
+//
+var inputs = {
+   toolpath:{type:'object',
+      event:function(evt){
+         mod.name = evt.detail.name
+         mod.path = evt.detail.path
+         mod.dpi = evt.detail.dpi
+         mod.width = evt.detail.width
+         mod.height = evt.detail.height
+         make_path()
+         }}}
+//
+// outputs
+//
+var outputs = {
+   file:{type:'object',
+      event:function(str){
+         obj = {}
+         obj.name = mod.name+".hpgl"
+         obj.contents = str
+         mods.output(mod,'file',obj)
+         }}}
+//
+// interface
+//
+var interface = function(div){
+   mod.div = div
+   //
+   // display file name
+   //
+   div.appendChild(document.createTextNode(mod.name + '.hpgl'))
+   div.appendChild(document.createElement('br'))
+   }
+//
+// local functions
+//
+function make_path() {
+   var units = 25.4/0.025
+   var dx = units*mod.width/mod.dpi
+   var nx = mod.width
+   var scale = dx/(nx-1)
+   str = "IN;SP1;" 
+   //
+   // follow segments
+   //
+    for (var seg = 0; seg < mod.path.length; ++seg) {
+        //
+        // Pen up
+        //
+        x = Math.round(scale * mod.path[seg][0][0])
+        y = Math.round(scale * mod.path[seg][0][1])
+        str += "PU" + x + "," + y + ";PD"
+        //
+        // Pen down
+        //
+        for (var pt = 1; pt < mod.path[seg].length; ++pt) {
+            //
+            // move to next point
+            //
+            x = Math.round(scale * mod.path[seg][pt][0])
+            y = Math.round(scale * mod.path[seg][pt][1])
+            str += x + "," + y
+            pt < (mod.path[seg].length - 1) ? str += "," : str += ";"
+        }
+    }
+   //Move to origin
+   str += "PU0,0;SP0;IN;"
+   //
+   // output file
+   //
+   outputs.file.event(str)
+   }
+//
+// return values
+//
+return ({
+   mod:mod,
+   name:name,
+   init:init,
+   inputs:inputs,
+   outputs:outputs,
+   interface:interface
+   })
+}())
+
