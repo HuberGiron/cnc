@@ -23,7 +23,7 @@ En esta sección se explica cómo:
    - `Placa` → **Arduino Uno**
    - `Puerto` → COM correspondiente al Arduino (en Windows) o el puerto equivalente en macOS / Linux.
 
-   ![Selección de placa y puerto en Arduino IDE](assets/img/x.jpg)
+   ![Selección de placa y puerto en Arduino IDE](assets/img/arduino_puerto.png)
 
 ---
 
@@ -36,12 +36,12 @@ En esta sección se explica cómo:
    - Menú `Programa → Incluir librería → Añadir biblioteca .ZIP…`
    - Selecciona el ZIP de GRBL que acabas de descargar.
 
-   ![Agregar librería GRBL desde ZIP](assets/img/x.jpg)
+   ![Agregar librería GRBL desde ZIP](assets/img/arduino_incluir.png)
 
 3. Abre el ejemplo de carga de GRBL:
    - Menú `Archivo → Ejemplos → grbl → GrblUpload`.
 
-   ![Ejemplo GrblUpload en Arduino IDE](assets/img/x.jpg)
+   ![Ejemplo GrblUpload en Arduino IDE](assets/img/arduino_upload.png)
 
 4. Verifica que sigues teniendo seleccionados:
    - Placa: **Arduino Uno**
@@ -51,7 +51,7 @@ En esta sección se explica cómo:
    - Espera a que termine la compilación y carga.
    - En la parte inferior debe aparecer `Subido` sin errores.
 
-   ![Subir GRBL al Arduino](assets/img/x.jpg)
+   ![Subir GRBL al Arduino](assets/img/arduino_subir.png)
 
 
 
@@ -81,7 +81,7 @@ OpenBuilds CONTROL es el programa que usaremos para enviar comandos y archivos G
 
 2. Instálalo siguiendo el asistente de tu sistema operativo (Windows, macOS o Linux).
 
-   ![Instalación de OpenBuilds CONTROL](assets/img/x.jpg)
+   ![Instalación de OpenBuilds CONTROL](assets/img/instalar_open.png)
 
 ---
 
@@ -93,7 +93,7 @@ OpenBuilds CONTROL es el programa que usaremos para enviar comandos y archivos G
    - Selecciona el **puerto COM** correspondiente al Arduino.
    - Haz clic en **CONNECT**.
 
-   ![Selección de puerto y conexión en OpenBuilds CONTROL](assets/img/x.jpg)
+   ![Selección de puerto y conexión en OpenBuilds CONTROL](assets/img/primer_open.png)
 
 4. En la consola (panel de mensajes) debe aparecer un mensaje similar a:
 
@@ -102,7 +102,7 @@ OpenBuilds CONTROL es el programa que usaremos para enviar comandos y archivos G
    Grbl 1.1h ['$' for help]
    ```
 
-   ![Consola con mensaje de GRBL 1.1h](assets/img/x.jpg)
+   ![Consola con mensaje de GRBL 1.1h](assets/img/terminal_saludo.png)
 
    - Si aparece una advertencia de **ALARM**, por ahora solo indica que GRBL está bloqueado por seguridad (por ejemplo, falta homing). Más adelante lo configuraremos; por ahora solo queremos verificar movimiento.
 
@@ -116,7 +116,7 @@ Antes de mover la máquina, es importante asegurarnos de trabajar en **milímetr
 2. Cambia a **mm** (en lugar de pulgadas / inches).
 3. Verás que los valores de distancia y los controles de jog se muestran ya en milímetros.
 
-   ![Cambiar unidades a milímetros en OpenBuilds CONTROL](assets/img/x.jpg)
+   ![Cambiar unidades a milímetros en OpenBuilds CONTROL](assets/img/mm_open.png)
 
 Además, puedes enviar desde la consola el comando:
 
@@ -147,7 +147,7 @@ En el panel de movimiento (jog) de OpenBuilds CONTROL:
 2. Ajusta la **velocidad de jog** (feedrate) a un valor bajo, por ejemplo:
    - 100–300 mm/min para las primeras pruebas.
 
-   ![Panel de jog con paso y velocidad configurados bajos](assets/img/x.jpg)
+   ![Panel de jog con paso y velocidad configurados bajos](assets/img/control_pasos.png)
 
 > Como la máquina todavía **no está calibrada**, pedirle que se mueva “1 mm” puede traducirse en un movimiento mucho mayor (10, 20, 100 mm, etc.). Por eso es importante:
 > - Usar siempre el **paso más pequeño**.
@@ -169,7 +169,6 @@ En el panel de movimiento (jog) de OpenBuilds CONTROL:
 5. Si se mueve pero en **dirección invertida**:
    - se corrige invirtiendo el conector completo de cables del motor a pasos o desde los parámetros de GRBL.
 
-   ![Movimiento de prueba en eje X](assets/img/x.jpg)
 
 ---
 
@@ -180,7 +179,6 @@ En el panel de movimiento (jog) de OpenBuilds CONTROL:
    - Que el eje se mueve sin atorarse.
    - Que la dirección tiene sentido con tu sistema de coordenadas (por ejemplo, Y+ hacia el fondo de la máquina).
 
-   ![Movimiento de prueba en eje Y](assets/img/x.jpg)
 
 Si el eje Y se comporta diferente (más lento, más ruidoso) puede ser por:
 - Diferencia mecánica (husillo vs banda).
@@ -194,10 +192,6 @@ Si el eje Y se comporta diferente (más lento, más ruidoso) puede ser por:
 2. Observa:
    - **Z+** debería alejar la herramienta de la pieza (subir).
    - **Z−** debería acercarla a la pieza (bajar).
-
-c
-
-se corrige invirtiendo el conector completo de cables del motor a pasos o desde los parámetros de GRBL.
 
 > ⚠️ En el caso del eje Z, ten especial cuidado para evitar golpes contra los topes mecánicos. Usa el paso mínimo y vigila visualmente el recorrido.
 
@@ -230,7 +224,7 @@ Durante estas pruebas de jog, aprovecha para verificar:
 - **Direcciones invertidas (X, Y o Z al revés)**:
   - No es un error grave en esta etapa; se corrige invirtiendo el conector completo de cables del motor a pasos o desde los parámetros de GRBL.
 
-En la siguiente sección (Calibración) se explicará cómo:
+En la siguiente sección se explicará cómo:
 
 - Ajustar pasos por milímetro.
 - Configurar velocidades y aceleraciones.
