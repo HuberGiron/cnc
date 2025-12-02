@@ -405,4 +405,4 @@ Con eso, y con `$20=1`, GRBL ya sabe cuál es el volumen de trabajo permitido.
 
 ## Siguiente sección
 
-[Crear tu primer archivo G-code (.nc) con un cuadrado](primer-gcode.md)
+[Crear tu primer archivo G-code (.nc)](primer-gcode.md)

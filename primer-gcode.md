@@ -4,7 +4,7 @@ title: Primer archivo G-code (.nc)
 nav_order: 5
 ---
 
-# Crear tu primer archivo G-code (.nc) con un cuadrado
+# Crear tu primer archivo G-code (.nc)
 
 En esta sección vamos a crear, paso a paso, tu **primer programa en G-code** para que la CNC dibuje o mecanice un **cuadrado simple**.
 
