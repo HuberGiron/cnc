@@ -227,6 +227,11 @@ Ahora seguimos un flujo muy parecido al del cuadrado simple.
 
 Si todo se ve bien, ajusta Z para que el lápiz toque el papel y repite la ejecución para obtener el trazo real.
 
+<video controls width="640">
+  <source src="{{ '/assets/img/lobo.mp4' | relative_url }}" type="video/mp4">
+  Tu navegador no soporta video HTML5.
+</video>
+
 ---
 
 ## 9. Notas y ajustes frecuentes
