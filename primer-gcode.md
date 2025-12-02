@@ -7,6 +7,48 @@ nav_order: 5
 # Crear tu primer archivo G-code (.nc) con un cuadrado
 
 
+## 9. Comandos G básicos para pruebas
+
+Antes de pasar a generar archivos `.nc` más complejos, es útil familiarizarse con algunos comandos G sencillos. Estos comandos se pueden escribir directamente en la consola de OpenBuilds CONTROL.
+
+### 9.1. Cambio de unidades y modos
+
+```gcode
+G21      ; usar milímetros
+G20      ; usar pulgadas
+
+G90      ; modo absoluto (coordenadas desde el origen)
+G91      ; modo incremental (movimientos relativos)
+```
+
+### 9.2. Movimientos rápidos y de trabajo
+
+```gcode
+G0 X0 Y0 Z5      ; movimiento rápido (rápido a la posición indicada)
+G1 X10 F200      ; movimiento lineal a X=10 mm con avance 200 mm/min
+G1 Y10           ; movimiento lineal a Y=10 mm (mantiene F anterior)
+G1 X0 Y0         ; regreso al origen en XY
+```
+
+### 9.3. Ejemplo: pequeño rectángulo de prueba
+
+Este no será todavía nuestro archivo final, pero ilustra la idea de un ciclo simple:
+
+```gcode
+G21 G90           ; mm y modo absoluto
+G0 X0 Y0 Z5       ; ir rápido al origen, levantar Z
+G1 Z0 F100        ; bajar Z (acercar herramienta)
+G1 X20 F200       ; trazar 20 mm en X
+G1 Y10            ; trazar 10 mm en Y
+G1 X0             ; volver a X=0
+G1 Y0             ; volver a Y=0
+G0 Z5             ; levantar Z
+```
+
+En la siguiente sección formalizaremos esto en un **archivo G-code (.nc)** bien estructurado para dibujar un cuadrado.
+
+---
+
 ## 7. Comandos G básicos para pruebas
 
 Antes de pasar a generar archivos `.nc` más complejos, es útil familiarizarse con algunos comandos G sencillos. Estos comandos se pueden escribir directamente en la consola de OpenBuilds CONTROL.

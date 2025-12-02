@@ -236,3 +236,9 @@ En la siguiente sección (Calibración) se explicará cómo:
 - Configurar velocidades y aceleraciones.
 - Activar homing y límites.
 - Verificar que los movimientos sean precisos y repetibles.
+
+---
+
+## Siguiente sección
+
+[Calibración](calibracion.md)
