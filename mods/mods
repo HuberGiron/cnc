@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# start mods server
+#
+# Neil Gershenfeld
+# (c) Massachusetts Institute of Technology 2016
+# Modified by Francisco Sanchez Arroyo 2023
+#
+# This work may be reproduced, modified, distributed, performed, and
+# displayed for any purpose, but must acknowledge the fab modules
+# project. Copyright is retained and must be preserved. The work is
+# provided as is; no warranty is provided, and users accept all
+# liability.
+#
+# find path, following symlinks
+#    from http://www.ostricher.com/2014/10/the-right-way-to-get-the-directory-of-a-bash-script/
+#
+# start local https server (kills before if already running)
+#
+clear
+echo "==================================="
+echo "= USE CTRL-C TO EXIT HTTPS SERVER ="
+echo "==================================="
+echo ""
+pkill -f "http-server"
+http-server -a localhost -p 8081 -S -C ./localhost.pem -K ./localhost-key.pem

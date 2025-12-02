@@ -4,6 +4,7 @@
 //
 // Neil Gershenfeld 
 // (c) Massachusetts Institute of Technology 2018
+// Modified by Francisco Sanchez 14 May 2020
 // 
 // This work may be reproduced, modified, distributed, performed, and 
 // displayed for any purpose, but must acknowledge the mods
@@ -40,7 +41,7 @@ function list_files(path) {
             var prefix = Array(match.length).join('\u00A0\u00A0\u00A0')
             }
          str += "module_menu('"
-         str += prefix+file+"','"
+         str += prefix+file.substring(0,file.length-3)+"','"
          str += encodeURI(url)
          str += "')\n"
          }

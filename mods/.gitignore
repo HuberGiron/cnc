@@ -1,2 +1,9 @@
-node_modules
 .DS_Store
+node_modules/
+package.json
+package-lock.json
+*.pem
+*.gypi
+mods.bat
+make.bat
+scratchbook

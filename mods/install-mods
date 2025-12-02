@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+
+# Date        : 12-Feb-2022
+# Author      : Francisco Sanchez Arroyo
+# Description : This script installs all the packages required by mods
+#               for unix-like OS.
+# Usage       : ./install-mods
+
+# Copyright   : This work may be reproduced, modified, distributed, performed, and
+#               displayed for any purpose, but must acknowledge the fab modules project.
+#               Copyright is retained and must be preserved.
+#               The work is provided as is; no warranty is provided,
+#               and users accept all liability.
+
+# expand aliases created in this script
+shopt -s expand_aliases
+
+# Title
+clear
+echo "###########################"
+echo "### mods install script ###"
+echo "###########################"
+read -p "Press ENTER to continue ..."
+
+# Do not run as root
+if ((`id -u`  == 0)); then
+	echo "Please DO NOT run this script as root"
+	exit 1
+else
+	echo "Confirming installation script running as normal user ... OK"
+fi
+
+#Has the current user sudo rights?
+if  groups ${USER} | grep -q '\bsudo\b' || groups ${USER} | grep -q '\bwheel\b' || groups ${USER} | grep -q '\badmin\b' ; then
+	echo "Super user privileges confirmed ......................... OK"
+else
+	>&2 echo "This script requires superuser privileges for a portion of the installation. Current user (${USER}) appears to lack superuser privileges. Make sure the current user (${USER}) belong to group 'sudo' (ubuntu et al.) or 'wheel' (arch et al.) or 'admin' (macOS et al.)"
+	exit 1
+fi
+
+# Cleanup previous installs
+if [ -f "./js/package.json" ]; then
+	rm ./js/package.json
+fi
+if [ -f "./js/package-lock.json" ]; then
+	rm ./js/package-lock.json
+fi
+if [ -d "./js/node_modules" ]; then
+	rm -rf ./js/node_modules
+fi
+
+# Detecting OS
+case $OSTYPE in
+
+	"darwin"*)
+		# MacOS
+		echo "MacOS Operating System detected"
+		curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
+		;;
+
+	"freebsd"*)
+		# FreeBSD
+		echo "FreeBSD Operating System detected"
+		sudo pkg install npm-node17
+		;;
+
+	"linux-gnu"*)
+		# Linux
+		echo "Linux Operating System detected. Guessing distribution ..."
+		read -p "Press ENTER to continue ..."
+		source /etc/os-release
+
+       		 if [[ $ID_LIKE = debian || $ID = debian ]]; then
+            		echo "Running Debian-like distribution"
+            		sudo apt update
+            		curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+            		sudo apt install nodejs
+        	elif [[ $ID_LIKE = arch || $ID = arch ]]; then
+            		echo "Running Arch-like distribution"
+            		sudo pacman -Syu
+            		sudo pacman -S --needed nodejs
+        	elif [[ $ID = fedora || $ID_LIKE = fedora || $ID_LIKE = 'rhel fedora' ]]; then
+            		echo "Running Fedora-like distribution"
+            		curl -sL https://rpm.nodesource.com/setup_14.x | sudo -E bash -
+            		sudo dnf install nodejs
+        	elif [[ $ID =~ ^opensuse || $ID_LIKE =~ ^suse ]]; then
+            		echo "Running Suse-like distribution"
+            		sudo zypper refresh
+            		sudo zypper -n install nodejs
+        	fi
+		;;
+	*)
+		>&2 echo "I Cannot detect your Operating System. Install all packages manually. Exiting script..."
+		exit 1
+		;;
+esac
+
+
+read -p "Press ENTER to continue ..."
+
+# Install for all distributions
+sudo npm install -g http-server --loglevel=error --no-fund

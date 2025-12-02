@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# set local version number as seconds since Unix epoch
+date \+%s > version
+echo version updated
+# probably overcomplicated
+# .
+# ..
+# ...
+# .... but it works

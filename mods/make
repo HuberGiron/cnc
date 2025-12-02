@@ -1,4 +1,14 @@
 #!/bin/bash
+# This section executes 3 javascript programs to generate 
+# the index of files, programs and modules.
+# Refer to files.js, programs.js and modules.js
+# for more info.
+
+# Delete macOS junk 
+find . -name '.DS_Store' -type f -delete
+# Create an index of files
 node js/files.js > files.html
+# Create the programs menu list
 node js/programs.js programs > programs/index.js
+# Create the modules menu list
 node js/modules.js modules > modules/index.js
