@@ -41,16 +41,15 @@ Guarda el archivo, por ejemplo:
    ![Menú principal de FabModules](assets/img/fabmodules-menu.png)
 3. Selecciona: **programs**.  
    ![Menú programs en FabModules](assets/img/fabmodules-programs.png)
-4. En la lista, ve a:
+4. Elige **open program** para cargar el programa `G-code mill 2D`.  
+   ![Ventana de open program](assets/img/fabmodules-open-program.png)
+5. En la lista, ve a:
 
    ```text
    machines → G-code → mill 2D
    ```
 
    ![Selección de G-code mill 2D](assets/img/fabmodules-programs-gcode-mill2d.png)
-
-5. Elige **open program** para cargar el programa `G-code mill 2D`.  
-   ![Ventana de open program](assets/img/fabmodules-open-program.png)
 
 Deberías ver un “grafo” con varios módulos conectados (read png, image ops, mill 2D, path to G-code, save file…).  
 ![Programa completo G-code mill 2D](assets/img/fabmodules-graph-overview.png)
