@@ -6,13 +6,31 @@ nav_order: 4
 
 # Calibración de la CNC
 
-En esta sección ajustaremos los parámetros de **pasos por milímetro (steps/mm)** de cada eje para que, cuando el G-code pida un movimiento de por ejemplo `X10`, la máquina se mueva realmente **10 mm** en ese eje, independientemente de si usa:
+En esta sección ajustaremos los parámetros más importantes de **GRBL** para que tu máquina:
 
-- Husillo (tornillo de potencia)
-- Banda dentada + polea
-- Cremallera + piñón
+- Se mueva la **distancia correcta** (steps/mm).
+- Tenga **velocidades y aceleraciones** razonables para tu mecánica.
+- Pueda usar **homing** y **límites** para trabajar de forma más segura.
 
-> ⚠️ **Nota:** Aquí solo veremos la parte de *distancia recorrida*. La configuración de velocidades, aceleraciones y límites se puede afinar después, cuando la máquina ya se mueva en la distancia correcta.
+---
+
+## 0. Dónde se guardan los parámetros de GRBL
+
+GRBL guarda su configuración interna en la **EEPROM del Arduino**. Esto significa que:
+
+- Los valores se mantienen aun cuando apagas la máquina o desconectas el USB.
+- Solo cambian cuando tú los modificas con los comandos `$`.
+
+Comandos clave:
+
+- `$$` → muestra **toda la configuración actual** de GRBL.
+- `$<n>=<valor>` → cambia un parámetro específico. Ejemplo:
+  - `$100=80` → pone 80 steps/mm en el eje X.
+- `#` → muestra offsets (G54, G92, etc., más avanzado).
+
+> 💡 Es buena práctica:
+> - Ejecutar `$$` y **guardar en un archivo de texto** una copia de tus valores actuales.
+> - Anotar los cambios importantes que vayas haciendo.
 
 ---
 
@@ -36,6 +54,12 @@ Donde:
 - `microsteps` → depende de cómo pusiste los jumpers MS1–MS2–MS3 (por ejemplo, 16 para 1/16 de paso).
 - `relación_extra` → se usa si hay alguna relación mecánica adicional (por ejemplo poleas 2:1). Si no hay, vale 1.
 - `avance_mm_por_vuelta` → cuántos mm se mueve el eje por **una vuelta completa** del motor o del mecanismo.
+
+Los parámetros en GRBL son:
+
+- `$100` → steps/mm del eje X  
+- `$101` → steps/mm del eje Y  
+- `$102` → steps/mm del eje Z  
 
 ---
 
@@ -230,17 +254,144 @@ Repites el ajuste hasta que obtengas algo cercano a 10 mm (por ejemplo 9.8–10.
 
 ---
 
-## 6. (Opcional) Recorrido máximo y límites suaves
+## 6. Configurar velocidades y aceleraciones
 
-Una vez que tus ejes se mueven la distancia correcta, puedes medir el **recorrido máximo útil** de cada eje (área de trabajo).
+Una vez que los **steps/mm** están razonablemente ajustados, podemos decirle a GRBL:
 
-1. Desde un extremo seguro, manda movimientos hasta donde ya no quieras que avance (antes del tope mecánico).
-2. Anota el recorrido máximo en mm para cada eje:
-   - `X_max`
-   - `Y_max`
-   - `Z_max`
+- Qué **velocidad máxima** permitir por eje.
+- Qué **aceleración** usar al arrancar y frenar.
 
-Puedes registrar esos recorridos en GRBL:
+Parámetros principales:
+
+- `$110`, `$111`, `$112` → **velocidad máxima** de X, Y, Z (mm/min).
+- `$120`, `$121`, `$122` → **aceleración** de X, Y, Z (mm/s²).
+
+> ⚠️ Si pones valores demasiado altos:
+> - Los motores pueden perder pasos.
+> - La máquina puede vibrar o hacer ruidos fuertes.
+> - Puedes tener errores de seguimiento de trayectoria.
+
+### 6.1. Valores de partida sugeridos (máquina pequeña tipo plotter/fresadora ligera)
+
+Como ejemplo **conservador** para arrancar:
+
+```gcode
+$110=1500   ; X max rate 1500 mm/min
+$111=1500   ; Y max rate 1500 mm/min
+$112=500    ; Z max rate  500 mm/min
+
+$120=50     ; X acceleration 50 mm/s^2
+$121=50     ; Y acceleration 50 mm/s^2
+$122=20     ; Z acceleration 20 mm/s^2
+```
+
+- Z suele tener valores menores porque suele levantar peso y tiene menos margen mecánico.
+- Si ves que la máquina se mueve muy suave y sin problemas, puedes ir subiendo poco a poco (por ejemplo +250 mm/min y +10 mm/s² por prueba).
+
+### 6.2. Cómo probar
+
+1. Ajusta los valores con los comandos `$` desde el sender.
+2. Haz movimientos de prueba con G-code simples, por ejemplo:
+
+   ```gcode
+   G21 G90
+   G0 X0 Y0
+   G0 X50
+   G0 Y50
+   G0 X0 Y0
+   ```
+
+3. Escucha y observa:
+   - Si la máquina se ve forzada o suena muy brusca, baja un poco las aceleraciones.
+   - Si todo va muy suave y lento, puedes aumentar max rate gradualmente.
+
+---
+
+## 7. Homing y límites
+
+Si tienes **finales de carrera** instalados, es muy recomendable activar:
+
+- El ciclo de **homing** (referenciado inicial).
+- Los **límites** (para que la máquina no se salga del área útil).
+
+Parámetros clave:
+
+- `$22` → habilitar homing (0 = desactivado, 1 = activado).
+- `$23` → dirección de homing (máscara de bits).
+- `$24` → velocidad de homing lenta (feed rate).
+- `$25` → velocidad de homing rápida (seek rate).
+- `$26` → debounce de los switches (ms).
+- `$27` → pull-off, distancia de separación después de tocar el switch (mm).
+- `$20` → soft limits (0 = off, 1 = on).
+- `$21` → hard limits (0 = off, 1 = on).
+
+### 7.1. Secuencia recomendada
+
+1. Verifica que los **finales de carrera** estén bien cableados (ver sección de hardware):
+   - Normalmente **NC** entre `S` y `GND`.
+
+2. Configura parámetros de homing razonables, por ejemplo:
+
+   ```gcode
+   $24=100     ; homing feed rate (lento)
+   $25=500     ; homing seek rate (rápido)
+   $26=250     ; debounce 250 ms
+   $27=2.0     ; pull-off 2 mm
+   ```
+
+3. Define hacia dónde quieres que se mueva cada eje en el homing mediante `$23`.
+   - Esto depende de dónde estén físicamente tus switches (mínimo o máximo).
+   - Ejemplo típico (solo referencia; debes ajustarlo a tu máquina):
+
+     ```gcode
+     $23=0   ; homing hacia X-, Y-, Z+ (por defecto GRBL)
+     ```
+
+4. **Activa el homing**:
+
+   ```gcode
+   $22=1
+   ```
+
+5. Reinicia GRBL (o reconecta el sender) y prueba el homing con:
+
+   ```gcode
+   $H
+   ```
+
+   - La máquina debe moverse hacia los switches, tocarlos, retroceder, y volver a tocarlos más lento.
+
+> ⚠️ Si ves que un eje se va en dirección contraria y choca, **apaga la máquina de inmediato** y ajusta `$23` o la inversión de dirección (`$3`) antes de reintentar.
+
+### 7.2. Límites suaves y duros
+
+Una vez que:
+
+- Tienes **steps/mm** correctos.
+- Has medido el **recorrido máximo** de cada eje (`$130`, `$131`, `$132`).
+- El homing funciona bien.
+
+Puedes activar límites:
+
+- `$20=1` → **soft limits** (recomendado).
+- `$21=1` → **hard limits** (usa la señal de los switches en cualquier momento).
+
+Los soft limits usan la información de:
+
+- Origen de máquina tras homing.
+- `X_max`, `Y_max`, `Z_max` (parámetros `$130`, `$131`, `$132`).
+
+Si un G-code intenta salir de ese volumen, GRBL da alarma y no ejecuta el movimiento.
+
+---
+
+## 8. (Opcional) Recorrido máximo y parámetros $130–$132
+
+Para usar bien los límites suaves, necesitas medir el **recorrido útil** de cada eje.
+
+1. Después de hacer homing, mueve manualmente (con jog) cada eje hasta el extremo opuesto seguro.
+2. Anota el valor que marca el sender en cada eje (X, Y, Z).
+3. Usa esos valores como:
 
 ```gcode
 $130=X_max   ; recorrido máximo en X (mm)
@@ -248,15 +399,15 @@ $131=Y_max   ; recorrido máximo en Y (mm)
 $132=Z_max   ; recorrido máximo en Z (mm)
 ```
 
-Si más adelante activas **soft limits** (`$20=1`), GRBL no permitirá comandos que salgan de esos rangos.
+Con eso, y con `$20=1`, GRBL ya sabe cuál es el volumen de trabajo permitido.
 
 ---
 
-## 7. Comandos G básicos para pruebas
+## 9. Comandos G básicos para pruebas
 
 Antes de pasar a generar archivos `.nc` más complejos, es útil familiarizarse con algunos comandos G sencillos. Estos comandos se pueden escribir directamente en la consola de OpenBuilds CONTROL.
 
-### 7.1. Cambio de unidades y modos
+### 9.1. Cambio de unidades y modos
 
 ```gcode
 G21      ; usar milímetros
@@ -266,7 +417,7 @@ G90      ; modo absoluto (coordenadas desde el origen)
 G91      ; modo incremental (movimientos relativos)
 ```
 
-### 7.2. Movimientos rápidos y de trabajo
+### 9.2. Movimientos rápidos y de trabajo
 
 ```gcode
 G0 X0 Y0 Z5      ; movimiento rápido (rápido a la posición indicada)
@@ -275,7 +426,7 @@ G1 Y10           ; movimiento lineal a Y=10 mm (mantiene F anterior)
 G1 X0 Y0         ; regreso al origen en XY
 ```
 
-### 7.3. Ejemplo: pequeño rectángulo de prueba
+### 9.3. Ejemplo: pequeño rectángulo de prueba
 
 Este no será todavía nuestro archivo final, pero ilustra la idea de un ciclo simple:
 

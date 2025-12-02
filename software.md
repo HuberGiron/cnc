@@ -167,7 +167,7 @@ En el panel de movimiento (jog) de OpenBuilds CONTROL:
 4. Si el motor **tiembla pero no avanza**:
    - Revisa la conexión de las bobinas en el driver (ver sección de hardware).
 5. Si se mueve pero en **dirección invertida**:
-   - Más adelante, en la configuración de GRBL, se puede invertir la dirección de ese eje (no hace falta cambiar cables ahora).
+   - se corrige invirtiendo el conector completo de cables del motor a pasos o desde los parámetros de GRBL.
 
    ![Movimiento de prueba en eje X](assets/img/x.jpg)
 
@@ -197,13 +197,13 @@ Si el eje Y se comporta diferente (más lento, más ruidoso) puede ser por:
 
    ![Movimiento de prueba en eje Z](assets/img/x.jpg)
 
-Si la dirección está invertida, más adelante se invertirá desde GRBL (sin recablear motores).
+se corrige invirtiendo el conector completo de cables del motor a pasos o desde los parámetros de GRBL.
 
 > ⚠️ En el caso del eje Z, ten especial cuidado para evitar golpes contra los topes mecánicos. Usa el paso mínimo y vigila visualmente el recorrido.
 
 ---
 
-### 4.5. Probar un cuarto eje (A) si está presente
+### 4.5. Opcional: Probar un cuarto eje (A) si está presente
 
 Si estás utilizando el cuarto driver (A) del CNC Shield:
 
