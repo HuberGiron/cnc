@@ -179,7 +179,7 @@ Siempre es recomendable ajustar por medición, aunque hayas calculado steps/mm c
 
 ### 5.1. Preparación (En la ventana de comando de OpenBuilds CONTROL)
 
-   ![ventana de comando de OpenBuilds CONTROL](assets/img/x.jpg)
+   ![ventana de comando de OpenBuilds CONTROL](assets/img/enviar_comandos.png)
 
 1. Asegúrate de estar en **milímetros** y modo **absoluto**:
 

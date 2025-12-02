@@ -20,7 +20,7 @@ En esta sección vamos a crear, paso a paso, tu **primer programa en G-code** pa
 
 Antes de construir el programa completo, vale la pena ver algunos **comandos básicos** que usaremos en el G-code. Todos estos se pueden probar primero directamente en la **consola de OpenBuilds CONTROL**.
 
-![Consola de OpenBuilds CONTROL con comandos G](assets/img/x.jpg)
+![Consola de OpenBuilds CONTROL con comandos G](assets/img/enviar_comandos.png)
 
 ### 1.1. Cambio de unidades y modos
 
@@ -70,7 +70,7 @@ G1 Y0             ; volver a Y=0
 G0 Z5             ; levantar Z
 ```
 
-![Vista previa de un rectángulo sencillo en OpenBuilds](assets/img/x.jpg)
+![Vista previa de un rectángulo sencillo en OpenBuilds](assets/img/gcode_cuadrado.png)
 
 Este ejemplo se parece mucho a lo que haremos con el cuadrado, pero todavía no está organizado como archivo `.nc` completo.
 
@@ -90,7 +90,7 @@ Puedes editarlo con:
 - **Visual Studio Code**
 - Cualquier editor de texto simple (no Word).
 
-![Edición de G-code en un editor de texto](assets/img/x.jpg)
+![Edición de G-code en un editor de texto](assets/img/nc_bloc.png)
 
 ---
 
@@ -154,7 +154,6 @@ La trayectoria será:
 3. Ir a P1 → P2 → P3 → volver a P0.
 4. Levantar Z.
 
-![Esquema de cuadrado 20x20 mm con origen en la esquina](assets/img/x.jpg)
 
 ---
 
@@ -190,7 +189,7 @@ Puedes ajustar:
 - `Z0` → si quieres que la herramienta apenas toque o quede un poco por debajo de la superficie (por ejemplo `Z-0.2`).
 - `F100`, `F200` → velocidades (feedrate) que pueden ser más bajas o altas según tu máquina.
 
-![Simulación o vista previa del cuadrado en el software](assets/img/x.jpg)
+![Simulación o vista previa del cuadrado en el software](assets/img/3d_view.png)
 
 ---
 
@@ -210,7 +209,7 @@ Puedes ajustar:
 
 4. Coloca el archivo `.nc` en una carpeta donde puedas encontrarlo fácilmente desde OpenBuilds CONTROL.
 
-![Guardando el archivo .nc en el editor](assets/img/x.jpg)
+![Guardando el archivo .nc en el editor](assets/img/guardado.png)
 
 ---
 
@@ -232,7 +231,8 @@ Puedes ajustar:
 
 3. Haz **Zero** en X, Y y Z desde OpenBuilds CONTROL (poner todos los ejes en 0).
 
-![Uso de los botones de jog y zero en OpenBuilds CONTROL](assets/img/x.jpg)
+![Uso de los botones de jog y zero en OpenBuilds CONTROL](assets/img/control_pasos.png))
+![Uso de los botones de jog y zero en OpenBuilds CONTROL2](assets/img/mm_open.png))
 
 ### 7.2. Cargar el archivo `.nc`
 
@@ -242,7 +242,7 @@ Puedes ajustar:
    - Debes ver un cuadrado de 20×20 mm.
    - Verifica que el origen coincide con la esquina inferior izquierda.
 
-![Vista previa del archivo cargado en OpenBuilds CONTROL](assets/img/x.jpg)
+![Vista previa del archivo cargado en OpenBuilds CONTROL](assets/img/3d_view.png)
 
 ### 7.3. Ejecutar el programa
 
@@ -256,7 +256,10 @@ Puedes ajustar:
    - X e Y trazan el cuadrado.
    - Z se levanta al final.
 
-![Máquina dibujando el cuadrado en papel o material](assets/img/x.jpg)
+<video controls width="640">
+  <source src="{{ '/assets/img/cuadrado.mp4' | relative_url }}" type="video/mp4">
+  Tu navegador no soporta video HTML5.
+</video>
 
 Si todo se ve bien, puedes:
 
