@@ -104,7 +104,7 @@ En muchos casos, con una imagen en blanco y negro bien preparada basta con:
 - Ajustar **threshold** si lo hay (para reforzar el contraste).
 - Ver en la vista previa que las líneas se ven claras y limpias.
 
-Si el flujo que cargas ya está preparado (como en el ejemplo de las capturas), usualmente no necesitas modificar mucho estos módulos.
+Si el flujo que cargas ya está preparado (como en el ejemplo de las capturas), usualmente no necesitas modificar estos módulos.
 
 ---
 
@@ -176,17 +176,9 @@ Cuando estés conforme:
 
 ## 7. Exportar el archivo `.nc`
 
-Al final del flujo debe haber un módulo de **save file** (o botón similar) conectado a `path to G-code`:
+Al fterminar de configurar el flujo dale al boton de calcular en mill raster 2D y el archivo **.nc** se descargara automaticamen. :
 
 ![Módulo save file en FabModules](assets/img/fabmodules-save-file.png)
-
-Pasos:
-
-1. Haz clic en **save file** (o `save .nc`, según la versión).
-2. Elige una carpeta de destino.
-3. Pon un nombre descriptivo, por ejemplo:
-   - `circulo_fabmodules.nc`
-   - `ibero_fabmodules.nc`
 
 Ya tienes un archivo G-code listo para enviar a la CNC.
 
@@ -200,9 +192,7 @@ Ahora seguimos un flujo muy parecido al del cuadrado simple.
 
 1. Abre **OpenBuilds CONTROL** y conéctate a tu placa GRBL.
 2. Coloca el **papel o material** donde se dibujará el logo.
-3. Mueve la máquina con los controles de **jog** hasta el punto donde quieres el **origen (X0, Y0)** del dibujo:
-   - Para un círculo, normalmente el origen será alguna esquina del área de dibujo (según cómo esté definido en FabModules).
-   - Para las letras IBERO, puedes tomar la esquina inferior izquierda del texto.
+3. Mueve la máquina con los controles de **jog** hasta el punto donde quieres el **origen (X0, Y0)** del dibujo, este coincidira con la esquina inferior izquierda de la imagen que se le dio, incluyendo los espacios en blanco de la imagen.
 4. Ajusta **Z** para que el plumín o lápiz:
    - Toque suavemente el papel (para prueba real), o
    - Quede 2–3 mm por encima (para una “prueba en el aire”).
@@ -214,8 +204,11 @@ Ahora seguimos un flujo muy parecido al del cuadrado simple.
 ### 8.2. Cargar y revisar el archivo
 
 1. Haz clic en **Open File / Cargar archivo**.
-2. Selecciona tu archivo `ibero_fabmodules.nc` o `circulo_fabmodules.nc`.
-3. Revisa la **vista previa**:
+2. Selecciona tu archivo `ibero.nc` o `circulo.nc`.
+3. Revisa el **Gcode Editor** para ver el codigo G generado por FabModules.
+![Vista previa del codigo](assets/img/openbuilds-preview-fabmodules.png)
+
+4. Revisa la **vista previa** o **3D View**:
 
    - El tamaño debe coincidir aproximadamente con lo esperado (por ejemplo, 60 mm de ancho para IBERO).
    - El origen del dibujo debe estar donde esperabas (esquina u origen del diseño).
