@@ -257,4 +257,4 @@ Una vez que domines este procedimiento, puedes:
 
 - Probar diferentes imágenes en blanco y negro.
 - Ajustar diámetros de herramienta y profundidades para pasar de “dibujo” a “grabado ligero”.
-- Integrar este flujo en ejercicios de clase donde los estudiantes diseñen sus propios logos o patrones.
+- Integrar este flujo en el diseño de tus propios logos, patrones o procesos.
