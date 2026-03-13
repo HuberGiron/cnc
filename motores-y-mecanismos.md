@@ -18,9 +18,9 @@ Una CNC necesita convertir el movimiento rotativo del motor en **movimiento line
 
 En esta sección se comparan tres mecanismos muy comunes en máquinas CNC y automatización ligera:
 
-- **husillo**,
-- **banda dentada**,
-- **engrane-cremallera**.
+- **Husillo**,
+- **Banda dentada**,
+- **Engrane-cremallera**.
 
 También se aclara el papel de las **guías lineales**, ya que con frecuencia se confunden con la transmisión aunque cumplen otra función.
 
@@ -28,16 +28,9 @@ También se aclara el papel de las **guías lineales**, ya que con frecuencia se
 
 En máquinas didácticas y de prototipado es muy común usar **motores a pasos**. Estos motores son adecuados porque permiten construir sistemas relativamente simples, económicos y suficientemente precisos para muchas aplicaciones de posicionamiento.
 
-Sin embargo, el comportamiento real del eje no depende solamente del motor. En términos de ingeniería, el desempeño aparece por la combinación de:
+Sin embargo, el comportamiento real del eje no depende solamente del motor. En términos de ingeniería, el desempeño aparece por la combinación de:motor,transmisión,guiado, masa móvil, rigidez estructural, estrategia de control.
 
-- motor,
-- transmisión,
-- guiado,
-- masa móvil,
-- rigidez estructural,
-- estrategia de control.
-
-Por eso dos ejes con el mismo motor pueden comportarse de manera muy distinta si uno usa banda y otro usa husillo.
+![Motores NEMA 17](assets/img/motor.png)
 
 ## 2. Husillo
 
@@ -45,19 +38,21 @@ El sistema por **husillo** convierte la rotación en avance lineal mediante un t
 
 ### Ventajas típicas del husillo
 
-- buen empuje axial,
-- buena relación entre rotación y avance,
-- buena rigidez para recorridos cortos o medianos,
-- buena solución cuando importa más el control del avance que la velocidad máxima.
+- Buen empuje axial,
+- Buena relación entre rotación y avance,
+- Buena rigidez para recorridos cortos o medianos,
+- Buena solución cuando importa más el control del avance que la velocidad máxima.
 
 ### Limitaciones típicas del husillo
 
-- menor velocidad que una banda en recorridos largos,
-- restricciones por velocidad crítica en tornillos largos,
-- mayor sensibilidad a desalineación,
-- menor conveniencia cuando el recorrido crece mucho.
+- Menor velocidad que una banda en recorridos largos,
+- Restricciones por velocidad crítica en tornillos largos,
+- Mayor sensibilidad a desalineación,
+- Menor conveniencia cuando el recorrido crece mucho.
 
 En general, el husillo suele ser una solución atractiva cuando se busca mayor capacidad de carga, mejor control del avance o una respuesta más rígida que la de una banda [1], [3].
+
+![Husillo](assets/img/mecanismos/husillo2.png)
 
 ## 3. Banda dentada
 
@@ -65,40 +60,46 @@ En un sistema por **banda dentada**, el motor mueve una polea y la polea arrastr
 
 ### Ventajas típicas de la banda
 
-- alta velocidad,
-- buena aceleración,
-- buena solución para recorridos largos,
-- menor masa rotacional que un husillo largo,
-- costo relativamente accesible.
+- Alta velocidad,
+- Buena aceleración,
+- Buena solución para recorridos largos,
+- Menor masa rotacional que un husillo largo,
+- Costo relativamente accesible.
 
 ### Limitaciones típicas de la banda
 
-- menor rigidez que un husillo o algunas soluciones por cremallera,
-- sensibilidad a la tensión de banda,
-- posibilidad de elongación o elasticidad del sistema,
-- menor empuje axial disponible.
+- Menor rigidez que un husillo o algunas soluciones por cremallera,
+- Sensibilidad a la tensión de banda,
+- Posibilidad de elongación o elasticidad del sistema,
+- Menor empuje axial disponible.
 
 Por eso la banda dentada es muy común en routers ligeros, plotters, cortadoras y mecanismos donde interesa más la dinámica del eje que el empuje máximo [1], [2].
 
-## 4. Engrane-cremallera
+![Componentes Banda](assets/img/mecanismos/componentes_banda.png)
 
-El sistema de **engranaje-cremallera** usa un piñón rotativo acoplado a una barra dentada lineal. Esta solución es muy utilizada cuando el recorrido se vuelve demasiado largo para que el husillo sea conveniente o cuando se requieren ejes largos, dinámicos y robustos [2], [4].
+![Banda](assets/img/mecanismos/banda.png)
+
+## 4. Piñon-cremallera
+
+El sistema de **piñon-cremallera** usa un piñón rotativo acoplado a una barra dentada lineal. Esta solución es muy utilizada cuando el recorrido se vuelve demasiado largo para que el husillo sea conveniente o cuando se requieren ejes largos, dinámicos y robustos [2], [4].
 
 ### Ventajas típicas de la cremallera
 
-- buena solución para largos recorridos,
-- buena rigidez estructural del sistema,
-- buen desempeño dinámico,
-- posibilidad de sistemas precargados para reducir backlash.
+- Buena solución para largos recorridos,
+- Buena rigidez estructural del sistema,
+- Buen desempeño dinámico,
+- Posibilidad de sistemas precargados para reducir backlash.
 
 ### Limitaciones típicas de la cremallera
 
-- mayor complejidad mecánica,
-- necesidad de buena alineación,
-- atención al backlash si no se precarga,
-- mayor costo que soluciones simples de banda en máquinas ligeras.
+- Mayor complejidad mecánica,
+- Necesidad de buena alineación,
+- Atención al backlash si no se precarga,
+- Mayor costo que soluciones simples de banda en máquinas ligeras.
 
 En aplicaciones industriales, la cremallera se vuelve muy competitiva cuando la longitud del eje es alta y la máquina necesita conservar rigidez y repetibilidad [4].
+
+![Cremallera](assets/img/mecanismos/cremallera.png)
 
 ## 5. Las guías lineales no son la transmisión
 
@@ -114,6 +115,10 @@ Por ejemplo:
 - guía lineal + husillo,
 - varilla lisa + bloque lineal + banda,
 - riel + carro + cremallera.
+
+![Componentes](assets/img/mecanismos/componentes_husillo.png)
+
+![Componentes](assets/img/mecanismos/husillo.png)
 
 ## 6. Comparación rápida
 
@@ -134,81 +139,6 @@ Una forma útil de seleccionar el mecanismo es hacerte estas preguntas:
 - ¿Qué tan importante es la rigidez?
 - ¿La máquina va a dibujar, cortar, grabar o fresar material con esfuerzo real?
 
-Responder eso ayuda más que intentar buscar un mecanismo “universalmente mejor”.
-
----
-
-## Espacio sugerido para imagen comparativa de mecanismos
-
-**Ruta sugerida:** `assets/img/mecanismos/comparacion-mecanismos.png`
-
-Sugerencias de contenido visual:
-
-- imagen comparativa entre banda, cremallera, husillo y motor lineal;
-- diagrama de ventajas relativas;
-- cuadro de selección por velocidad / precisión / costo.
-
-<!--
-![Comparación de mecanismos de transmisión lineal](assets/img/mecanismos/comparacion-mecanismos.png)
-*Figura X. Comparación conceptual entre distintos mecanismos de movimiento lineal. Adaptado de Tecnotion [2].*
--->
-
-## Espacio sugerido para imagen del sistema por banda
-
-**Ruta sugerida:** `assets/img/mecanismos/banda-dentada.png`
-
-Sugerencias de contenido visual:
-
-- polea GT2 + banda + motor;
-- esquema de tensión de banda;
-- ejemplo de recorrido largo en eje X o Y.
-
-<!--
-![Sistema por banda dentada](assets/img/mecanismos/banda-dentada.png)
-*Figura X. Ejemplo de sistema por banda dentada para convertir rotación en desplazamiento lineal. Elaboración propia o adaptado de fuente comercial.*
--->
-
-## Espacio sugerido para imagen del sistema por husillo
-
-**Ruta sugerida:** `assets/img/mecanismos/husillo-acme.png`
-
-Sugerencias de contenido visual:
-
-- tornillo Acme y tuerca;
-- ejemplo de cople flexible + motor + tornillo;
-- esquema del avance por vuelta.
-
-<!--
-![Sistema por husillo](assets/img/mecanismos/husillo-acme.png)
-*Figura X. Ejemplo de sistema por husillo para convertir rotación en movimiento lineal. Elaboración propia o adaptado de fuente comercial.*
--->
-
-## Espacio sugerido para imagen del sistema rack-and-pinion
-
-**Ruta sugerida:** `assets/img/mecanismos/cremallera-pinion.png`
-
-Sugerencias de contenido visual:
-
-- piñón engranando con cremallera;
-- eje largo tipo gantry;
-- comparación con husillo largo.
-
-<!--
-![Sistema de engrane-cremallera](assets/img/mecanismos/cremallera-pinion.png)
-*Figura X. Sistema de engrane-cremallera para movimiento lineal. Adaptado de Nidec [4].*
--->
-
-## Espacio sugerido para video
-
-```html
-<iframe width="560" height="315"
-  src="https://www.youtube.com/embed/VIDEO_ID"
-  title="Video sobre motores y mecanismos CNC"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen>
-</iframe>
-```
 
 ## Referencias
 
