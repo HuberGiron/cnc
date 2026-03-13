@@ -44,9 +44,6 @@ Finalmente, la parte mecánica transforma la rotación de los motores en desplaz
 
 En una CNC cartesiana, los movimientos se organizan normalmente sobre los ejes **X, Y y Z**. Cada eje debe cumplir dos funciones al mismo tiempo:
 
-- Permitir movimiento en una sola dirección útil;
-- Restringir los grados de libertad no deseados.
-
 - **Componentes de guiado**, que obligan al carro a desplazarse recto, restringiendo los grados de libertad no deseados.
 
 ![Guias](assets/img/arquitectura/guias.png)
