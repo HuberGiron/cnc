@@ -174,8 +174,6 @@ Los detalles de configuración de homing y límites se describen en la sección 
 
 ---
 
----
-
 # Componentes comerciales y ligas de compra
 
 ### A. Control y electrónica
