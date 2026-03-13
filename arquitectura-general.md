@@ -18,7 +18,7 @@ De forma general, una CNC puede descomponerse en los siguientes bloques:
 
 La pieza, contorno o trayectoria se genera primero en un entorno CAD o a partir de un flujo 2D/3D. Después, un software CAM o una herramienta intermedia convierte esa geometría en trayectorias y parámetros de proceso.
 
-![Arquitectura general de una CNC](assets/img/arquitectura/cnc-digital.png)
+![Arquitectura general de una CNC](assets/img/mods/2.png)
 
 ### 1.2 Programa de máquina
 
@@ -50,7 +50,10 @@ En una CNC cartesiana, los movimientos se organizan normalmente sobre los ejes *
 Por eso en una máquina real se combinan dos familias de componentes:
 
 - **componentes de guiado**, que obligan al carro a desplazarse recto;
+![Maquina ejemplo CNC](assets/img/arquitectura/guias.png)
+
 - **componentes de transmisión**, que son los que efectivamente lo empujan o arrastran.
+![Maquina ejemplo CNC](assets/img/arquitectura/mecanismos.pngs)
 
 Esta distinción es importante desde el inicio porque evita una confusión muy común: una guía lineal no reemplaza una banda, un husillo o una cremallera; cada elemento resuelve una función distinta.
 
