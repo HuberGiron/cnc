@@ -181,7 +181,7 @@ En aplicaciones industriales, la cremallera se vuelve muy competitiva cuando la 
 
 ![Cremallera](assets/img/mecanismos/cremallera.png)
 
-## 5. Las guías lineales no son la transmisión
+## 5. Guías lineales
 
 Un punto fundamental: las **guías lineales** no generan el movimiento, sino que **restringen** el movimiento a una trayectoria recta. THK describe este tipo de elementos como componentes lineales que usan principios de rodamientos para mover objetos en línea recta con baja fricción y buena capacidad de carga [5].
 
