@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Mecanismos de transmisión
+title: Mecanismos
 nav_order: 3
 ---
 
