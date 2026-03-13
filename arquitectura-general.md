@@ -49,10 +49,12 @@ En una CNC cartesiana, los movimientos se organizan normalmente sobre los ejes *
 
 Por eso en una máquina real se combinan dos familias de componentes:
 
-- **Componentes de guiado**, que obligan al carro a desplazarse recto;
+- **Componentes de guiado**, que obligan al carro a desplazarse recto.
+
 ![Guias](assets/img/arquitectura/guias.png)
 
 - **Componentes de transmisión**, que son los que efectivamente lo empujan o arrastran.
+
 ![Mecanismos](assets/img/arquitectura/mecanismos.png)
 
 Esta distinción es importante desde el inicio porque evita una confusión muy común: una guía lineal no reemplaza una banda, un husillo o una cremallera; cada elemento resuelve una función distinta.
@@ -89,7 +91,7 @@ El valor del enfoque modular no es únicamente teórico. En una CNC didáctica o
 
 Eso hace que la máquina no sea solo una herramienta terminada, sino también una **plataforma de aprendizaje y evolución**.
 
-![MTM1](assets/img/arquitectura/mtm2.jpg)
+![MTM1](assets/img/arquitectura/mtm2.png)
 
 ![MTM2](assets/img/arquitectura/mtm_video.gif)
 
