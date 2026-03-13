@@ -24,11 +24,11 @@ En esta sección se comparan tres mecanismos muy comunes en máquinas CNC y auto
 
 También se aclara el papel de las **guías lineales**, ya que con frecuencia se confunden con la transmisión aunque cumplen otra función.
 
-## 1. El motor no define solo el eje
+## 1. Motor
 
-En máquinas didácticas y de prototipado es muy común usar **motores a pasos**. Estos motores son adecuados porque permiten construir sistemas relativamente simples, económicos y suficientemente precisos para muchas aplicaciones de posicionamiento.
+En máquinas CNC de prototipado es muy común usar **motores a pasos**. Estos motores son adecuados porque permiten construir sistemas relativamente simples, económicos y suficientemente precisos para muchas aplicaciones de posicionamiento.
 
-Sin embargo, el comportamiento real del eje no depende solamente del motor. En términos de ingeniería, el desempeño aparece por la combinación de:motor,transmisión,guiado, masa móvil, rigidez estructural, estrategia de control.
+Sin embargo, el comportamiento real del eje no depende solamente del motor. En términos de ingeniería, el desempeño aparece por la combinación de: motor, transmisión, guiado, masa móvil, rigidez estructural, estrategia de control.
 
 ![Motores NEMA 17](assets/img/motor.png)
 
@@ -51,6 +51,8 @@ El sistema por **husillo** convierte la rotación en avance lineal mediante un t
 - Menor conveniencia cuando el recorrido crece mucho.
 
 En general, el husillo suele ser una solución atractiva cuando se busca mayor capacidad de carga, mejor control del avance o una respuesta más rígida que la de una banda [1], [3].
+
+![Componentes Husillo](assets/img/mecanismos/componentes_husillo.png)
 
 ![Husillo](assets/img/mecanismos/husillo2.png)
 
@@ -116,7 +118,7 @@ Por ejemplo:
 - varilla lisa + bloque lineal + banda,
 - riel + carro + cremallera.
 
-![Componentes](assets/img/mecanismos/componentes_husillo.png)
+![Componentes](assets/img/mecanismos/componentes_guia.png)
 
 ![Componentes](assets/img/mecanismos/husillo.png)
 
