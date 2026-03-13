@@ -24,7 +24,7 @@ Diseño por computadora de la pieza, contorno o trayectoria en un entorno CAD o 
 
 El resultado suele expresarse como **G-code**, un conjunto de instrucciones que indican coordenadas, velocidades, movimientos, arranques, pausas y otras acciones necesarias para ejecutar el trabajo [2].
 
-![Consola de OpenBuilds CONTROL con comandos G](assets/img/enviar_comandos.png)
+![Consola de OpenBuilds CONTROL con comandos G](assets/img/gcode_cuadrado.png)
 
 ### 1.3 Controlador y etapa de potencia
 
