@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Motores y mecanismos de transmisión
+title: Mecanismos de transmisión
 nav_order: 3
 ---
 

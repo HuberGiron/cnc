@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Diseño mecánico de esta CNC
+title: Diseño mecánico
 nav_order: 4
 ---
 

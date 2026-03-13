@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Arquitectura general de una CNC
+title: Arquitectura
 nav_order: 2
 ---
 
