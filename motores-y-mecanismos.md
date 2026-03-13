@@ -199,14 +199,14 @@ Un punto fundamental: las **guías lineales** no generan el movimiento, sino que
 
 Eso significa que un eje lineal completo normalmente tiene al menos dos subsistemas:
 
-- un sistema de **guiado**,
-- un sistema de **accionamiento**.
+- Un sistema de **guiado**,
+- Un sistema de **accionamiento**.
 
 Por ejemplo:
 
-- guía lineal + husillo,
-- varilla lisa + bloque lineal + banda,
-- riel + carro + cremallera.
+- Guía lineal + Husillo,
+- Varilla lisa + Carro lineal + Banda,
+- Riel + Carro + Cremallera.
 
 ![Componentes](assets/img/mecanismos/componentes_guia.png)
 
@@ -218,7 +218,7 @@ Por ejemplo:
 |---|---|---|---|
 | Husillo | Empuje y control del avance | Menor velocidad en recorridos largos | Z, ejes cortos o de mayor rigidez |
 | Banda dentada | Velocidad y aceleración | Menor rigidez / elasticidad | X o Y en máquinas ligeras |
-| Engrane-cremallera | Recorrido largo y rigidez | Mayor complejidad y costo | Gantries medianos o grandes |
+| Engrane-cremallera | Recorrido largo y rigidez | Mayor complejidad y costo | Movimiento robusto o de precisión |
 
 ## 7. Criterio práctico de selección
 
