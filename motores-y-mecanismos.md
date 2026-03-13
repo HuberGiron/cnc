@@ -24,11 +24,15 @@ En esta sección se comparan tres mecanismos muy comunes en máquinas CNC y auto
 
 También se aclara el papel de las **guías lineales**, ya que con frecuencia se confunden con la transmisión aunque cumplen otra función.
 
-## 1. Motor
+## 1. Motor a pasos
 
 En máquinas CNC de prototipado es muy común usar **motores a pasos** (*stepper motors*). Se utilizan porque permiten construir sistemas de movimiento relativamente simples, económicos y suficientemente precisos para muchas tareas de posicionamiento en ejes X, Y y Z.
 
+![Motores NEMA 1](assets/img/motor.png)
+
 Un motor a pasos no gira “libremente” como un motor DC convencional, sino que avanza en **incrementos angulares discretos** llamados **pasos**. Internamente, el driver energiza sus bobinas en una secuencia determinada, generando campos magnéticos que hacen que el rotor avance de una posición estable a la siguiente. Por eso, cada pulso enviado al sistema produce un pequeño avance angular del eje del motor.
+
+![Motores NEMA 17](assets/img/mecanismos/motor_a_pasos.webp)
 
 En muchos motores NEMA 17 usados en CNC, el ángulo típico por paso es de **1.8°**, lo que significa que se requieren:
 
@@ -41,9 +45,9 @@ Este concepto es fundamental en CNC, porque el controlador no mueve directamente
 
 El motor produce **movimiento rotativo discreto**, pero la máquina necesita **movimiento lineal controlado**. Por eso se usa un mecanismo intermedio, por ejemplo:
 
-- **banda dentada**
-- **husillo**
-- **engranaje-cremallera**
+- **Banda dentada**
+- **Husillo**
+- **Piñon-cremallera**
 
 La relación entre los pasos del motor y el desplazamiento lineal depende del mecanismo de transmisión.
 
@@ -86,8 +90,6 @@ Aunque son muy útiles, los motores a pasos también tienen limitaciones. Si se 
 - Rigidez del sistema.
 
 Por eso, al diseñar una CNC no basta con elegir un “motor potente”; hay que entender cómo sus pasos se traducen en movimiento lineal útil dentro de una arquitectura mecánica completa.
-
-![Motores NEMA 17](assets/img/motor.png)
 
 ## 2. Husillo
 
