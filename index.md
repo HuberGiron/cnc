@@ -33,14 +33,6 @@ Esta máquina usa una lógica típica de fabricación digital ligera:
 - **OpenBuilds CONTROL** como sender para pruebas y ejecución de G-code.
 - **Flujo CAD/CAM** para pasar de un diseño digital a trayectorias reales de máquina.
 
-## Enfoque de la documentación
-
-Este repositorio tiene dos capas:
-
-1. una capa **introductoria y conceptual**, para entender cómo funciona una CNC y por qué se diseña así;
-2. una capa **práctica**, enfocada en hardware, software, calibración y operación real.
-
-La primera capa es importante porque ayuda a interpretar mejor las decisiones del proyecto: por qué un eje usa banda, por qué otro puede usar husillo, por qué las guías lineales no son lo mismo que la transmisión y cómo la modularidad permite iterar el diseño.
 
 ## Requisitos básicos
 
@@ -65,14 +57,3 @@ Si es tu primera vez con una máquina CNC, conviene seguir este orden:
 
 ---
 
-## Nota sobre imágenes, videos y descargables
-
-Las nuevas secciones del repositorio ya incluyen espacios sugeridos para:
-
-- imágenes y diagramas,
-- videos embebidos o enlazados,
-- STL/STEP descargables,
-- ligas de compra de componentes comerciales,
-- referencias en formato IEEE.
-
-La idea es que estas páginas sirvan tanto como **manual técnico** como **bitácora de diseño** de la máquina.
