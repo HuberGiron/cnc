@@ -61,12 +61,12 @@ Esta distinción es importante desde el inicio porque evita una confusión muy c
 
 Para documentar y diseñar mejor una máquina de este tipo, conviene pensarla como un conjunto de módulos:
 
-- módulo estructural,
-- módulo de guiado,
-- módulo de transmisión,
-- módulo electrónico,
-- módulo de control,
-- módulo de herramienta.
+- Módulo estructural
+- Módulo de guiado
+- Módulo de transmisión
+- Módulo electrónico
+- Módulo de control
+- Módulo de herramienta
 
 Este enfoque se relaciona bien con la filosofía de **Machines That Make (MTM)** del MIT Center for Bits and Atoms, donde se trabaja con máquinas, componentes y subconjuntos reconfigurables que permiten prototipar rápidamente nuevas configuraciones y evolucionarlas por iteraciones [3], [4].
 
@@ -74,13 +74,11 @@ Este enfoque se relaciona bien con la filosofía de **Machines That Make (MTM)**
 
 La modularidad ofrece ventajas claras:
 
-- facilita rediseñar un eje sin rehacer toda la máquina;
-- permite probar varias soluciones de transmisión;
-- ayuda a sustituir piezas impresas, comerciales o estructurales;
-- mejora la documentación del proyecto;
-- vuelve más replicable el sistema.
-
-## 4. Qué aporta el enfoque MTM en un proyecto como este
+- Facilita rediseñar un eje sin rehacer toda la máquina;
+- Permite probar varias soluciones de transmisión;
+- Ayuda a sustituir piezas impresas, comerciales o estructurales;
+- Mejora la documentación del proyecto;
+- Vuelve más replicable el sistema.
 
 El valor del enfoque modular no es únicamente teórico. En una CNC didáctica o de laboratorio, pensar en módulos permite:
 
@@ -88,7 +86,6 @@ El valor del enfoque modular no es únicamente teórico. En una CNC didáctica o
 - sustituir un sistema por banda por uno de husillo;
 - cambiar el cabezal o herramienta;
 - separar claramente la parte mecánica de la parte electrónica;
-- mantener el repositorio organizado por subsistemas.
 
 Eso hace que la máquina no sea solo una herramienta terminada, sino también una **plataforma de aprendizaje y evolución**.
 
