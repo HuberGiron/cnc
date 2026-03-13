@@ -212,3 +212,9 @@ Una forma útil de seleccionar el mecanismo es hacerte estas preguntas:
 [4] Nidec Drive Technology Corporation, “Applying Rack and Pinion in Linear Drive Systems,” 2026. [En línea]. Disponible en: https://www.nidec-dtc.com/applying-rack-and-pinion-in-linear-drive-systems/
 
 [5] THK Co., Ltd., “Linear Guides (Linear Motion Guides) Design and Selection,” 2026. [En línea]. Disponible en: https://www.thk.com/opm/jp/en/linear/thklinearguide/
+
+---
+
+## Siguiente sección
+
+[Diseño mecánico de esta CNC](diseno-mecanico-cnc.md)

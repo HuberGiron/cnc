@@ -44,49 +44,43 @@ Finalmente, la parte mecánica transforma la rotación de los motores en desplaz
 
 En una CNC cartesiana, los movimientos se organizan normalmente sobre los ejes **X, Y y Z**. Cada eje debe cumplir dos funciones al mismo tiempo:
 
-- permitir movimiento en una sola dirección útil;
-- restringir los grados de libertad no deseados.
+- Permitir movimiento en una sola dirección útil;
+- Restringir los grados de libertad no deseados.
 
-Por eso en una máquina real se combinan dos familias de componentes:
-
-- **Componentes de guiado**, que obligan al carro a desplazarse recto.
+- **Componentes de guiado**, que obligan al carro a desplazarse recto, restringiendo los grados de libertad no deseados.
 
 ![Guias](assets/img/arquitectura/guias.png)
 
-- **Componentes de transmisión**, que son los que efectivamente lo empujan o arrastran.
+- **Componentes de transmisión**, permitiendo movimiento en una sola dirección útil, empujando o arrastrando la carga.
 
 ![Mecanismos](assets/img/arquitectura/mecanismos.png)
 
-Esta distinción es importante desde el inicio porque evita una confusión muy común: una guía lineal no reemplaza una banda, un husillo o una cremallera; cada elemento resuelve una función distinta.
+Esta distinción es importante: una guía lineal no reemplaza una banda, un husillo o una cremallera; cada elemento resuelve una función distinta.
 
 ## 3. La CNC como sistema modular
 
 Para documentar y diseñar mejor una máquina de este tipo, conviene pensarla como un conjunto de módulos:
 
-- Módulo estructural
-- Módulo de guiado
-- Módulo de transmisión
-- Módulo electrónico
-- Módulo de control
-- Módulo de herramienta
+- Estructura
+- Guías
+- Transmisión
+- Motores
+- Módulo de control 
+- Software de control
+- Herramienta
 
 Este enfoque se relaciona bien con la filosofía de **Machines That Make (MTM)** del MIT Center for Bits and Atoms, donde se trabaja con máquinas, componentes y subconjuntos reconfigurables que permiten prototipar rápidamente nuevas configuraciones y evolucionarlas por iteraciones [3], [4].
 
 ![Maquina ejemplo CNC](assets/img/arquitectura/mtm1.jpg)
 
-La modularidad ofrece ventajas claras:
+La modularidad permite:
 
 - Facilita rediseñar un eje sin rehacer toda la máquina;
-- Permite probar varias soluciones de transmisión;
-- Ayuda a sustituir piezas impresas, comerciales o estructurales;
-- Mejora la documentación del proyecto;
-- Vuelve más replicable el sistema.
-
-En una CNC didáctica o de laboratorio, pensar en módulos permite:
-
 - Escalar la máquina cambiando solo la longitud de perfiles y ejes;
-- Sustituir un sistema por banda por uno de husillo;
+- Permite probar varias soluciones de transmisión;
 - Cambiar el cabezal o herramienta;
+- Ayuda a sustituir piezas impresas, comerciales o estructurales;
+- Vuelve más replicable el sistema.
 - Separar claramente la parte mecánica de la parte electrónica;
 
 ![MTM1](assets/img/arquitectura/mtm2.png)
@@ -111,3 +105,9 @@ En una CNC didáctica o de laboratorio, pensar en módulos permite:
 [3] MIT Center for Bits and Atoms, “Machines That Make,” 2026. [En línea]. Disponible en: https://mtm.cba.mit.edu/
 
 [4] MIT Center for Bits and Atoms, “Cardboard Stages,” 2014. [En línea]. Disponible en: https://mtm.cba.mit.edu/2014/2014_mmtm/
+
+---
+
+## Siguiente sección
+
+[Motores y mecanismos de transmisión](motores-y-mecanismos.md)

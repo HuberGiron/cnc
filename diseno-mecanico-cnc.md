@@ -227,3 +227,9 @@ A continuación se listan las piezas finales STL que forman parte de esta versi�
 [15] UNIT Electronics, “Ruedas Delrin Tipo V y Dual V,” 2026. [En línea]. Disponible en: https://uelectronics.com/producto/ruedas-delrin-tipo-v-y-dual-v/
 
 [16] UNIT Electronics, “Ángulo de Ajuste para Perfil V-slot,” 2026. [En línea]. Disponible en: https://uelectronics.com/producto/angulo-de-ajuste-para-perfil-v-slot/
+
+---
+
+## Siguiente sección
+
+[Hardware y conexiones](hardware.md)
