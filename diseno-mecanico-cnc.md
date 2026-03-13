@@ -123,8 +123,8 @@ A continuaci√≥n se listan las piezas finales STL que forman parte de esta versi√
 
 ### Piezas STL finales
 
-- [EjeX_Base_carroBanda.stl](assets/files/stl/EjeX_Base_carroBanda.stl)
-- [EjeX_Base_motor_arriba.stl](assets/files/stl/EjeX_Base_motor_arriba.stl)
+- [EjeX_Base_carroBanda.stl](/assets/files/stl/EjeX_Base_carroBanda.stl)
+- [EjeX_Base_motor_arriba.stl](../assets/files/stl/EjeX_Base_motor_arriba.stl)
 - [EjeX_Base_tornillo_arriba.stl](assets/files/stl/EjeX_Base_tornillo_arriba.stl)
 - [EjeY_base_abajo.stl](assets/files/stl/EjeY_base_abajo.stl)
 - [EjeY_Base_motor_abajo.stl](assets/files/stl/EjeY_Base_motor_abajo.stl)
