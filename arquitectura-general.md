@@ -82,14 +82,12 @@ La modularidad ofrece ventajas claras:
 - Mejora la documentación del proyecto;
 - Vuelve más replicable el sistema.
 
-El valor del enfoque modular no es únicamente teórico. En una CNC didáctica o de laboratorio, pensar en módulos permite:
+En una CNC didáctica o de laboratorio, pensar en módulos permite:
 
-- escalar la máquina cambiando solo la longitud de perfiles y ejes;
-- sustituir un sistema por banda por uno de husillo;
-- cambiar el cabezal o herramienta;
-- separar claramente la parte mecánica de la parte electrónica;
-
-Eso hace que la máquina no sea solo una herramienta terminada, sino también una **plataforma de aprendizaje y evolución**.
+- Escalar la máquina cambiando solo la longitud de perfiles y ejes;
+- Sustituir un sistema por banda por uno de husillo;
+- Cambiar el cabezal o herramienta;
+- Separar claramente la parte mecánica de la parte electrónica;
 
 ![MTM1](assets/img/arquitectura/mtm2.png)
 
