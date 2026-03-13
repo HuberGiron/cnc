@@ -67,10 +67,10 @@ Para la guía lineal que apoya este mecanismo se utilizan componentes como:
 - Bloques lineales **SCS8UU** o equivalentes,
 - Rodamientos lineales **LM8UU**.
 
-Ese conjunto no genera movimiento por sí solo; su función es **guiar** y **restringir** el desplazamiento. Dicho de otra manera:
+Ese conjunto no genera movimiento por sí solo; su función es **guiar** y **restringir** el desplazamiento:
 
-- la guía mantiene el carro recto,
-- la transmisión de husillo es la que efectivamente lo desplaza.
+- La guía mantiene el carro recto,
+- La transmisión de husillo es la que efectivamente lo desplaza.
 
 Esta distinción es importante para entender por qué una máquina puede usar las mismas guías con mecanismos de transmisión distintos.
 
@@ -132,14 +132,6 @@ A continuación se listan las piezas finales STL que forman parte de esta versi�
 - [EjeZ_engrane.stl](assets/files/stl/EjeZ_engrane.stl)
 - [Estructura_Base_electronica.stl](assets/files/stl/Estructura_Base_electronica.stl)
 - [Estructura_tapa_2020.stl](assets/files/stl/Estructura_tapa_2020.stl)
-
-### Nota de organización
-
-Si tu archivo actualmente se llama `Estructura_tapa 2020.stl`, conviene renombrarlo a:
-
-`Estructura_tapa_2020.stl`
-
-para evitar espacios en la URL.
 
 ---
 
