@@ -50,10 +50,10 @@ En una CNC cartesiana, los movimientos se organizan normalmente sobre los ejes *
 Por eso en una máquina real se combinan dos familias de componentes:
 
 - **Componentes de guiado**, que obligan al carro a desplazarse recto;
-![Maquina ejemplo CNC](assets/img/arquitectura/guias.png)
+![Guias](assets/img/arquitectura/guias.png)
 
 - **Componentes de transmisión**, que son los que efectivamente lo empujan o arrastran.
-![Maquina ejemplo CNC](assets/img/arquitectura/mecanismos.pngs)
+![Mecanismos](assets/img/arquitectura/mecanismos.pngs)
 
 Esta distinción es importante desde el inicio porque evita una confusión muy común: una guía lineal no reemplaza una banda, un husillo o una cremallera; cada elemento resuelve una función distinta.
 
