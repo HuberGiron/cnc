@@ -119,7 +119,7 @@ El eje Z de la máquina utiliza un mecanismo de **piñón-cremallera** que sopor
 
 ## Descarga de STL para impresión 3D
 
-A continuación se listan las piezas finales STL que forman parte de esta versión de la máquina. Se recomienda mantener los nombres de archivo sin acentos ni espacios para evitar problemas en GitHub Pages o al enlazarlos desde Markdown.
+A continuación se listan las piezas finales STL que forman parte de esta versión de la máquina. 
 
 ### Piezas STL finales
 
@@ -136,27 +136,6 @@ A continuación se listan las piezas finales STL que forman parte de esta versi�
 ---
 
 # Componentes comerciales y ligas de compra
-
-## Proveedores sugeridos
-
-Para este proyecto conviene separar las compras en cuatro grupos:
-
-1. **Control y electrónica**
-2. **Movimiento lineal y transmisión**
-3. **Estructura**
-4. **Tornillería y accesorios**
-
-### Proveedor sugerido para electrónica y movimiento ligero
-
-**UNIT Electronics**
-
-### Proveedor sugerido para perfilería estructural
-
-**Mercado Libre México** para perfil 2020 / V-slot y accesorios de estructura.
-
-## Revisión del BOM actual
-
-Después de depurar la documentación, el listado de compras conviene quedar así:
 
 ### A. Control y electrónica
 
@@ -196,8 +175,6 @@ Después de depurar la documentación, el listado de compras conviene quedar as�
 
 ## Ligas sugeridas de compra
 
-> **Nota:** estas ligas sirven como referencia de partida. Conviene revisar existencia, medidas exactas, diámetro de barreno, longitud del husillo y compatibilidad con tu versión final antes de comprar.
-
 ### Electrónica y control — UNIT Electronics
 
 - [Arduino UNO Rev3](https://uelectronics.com/producto/arduino-uno-rev3/)
@@ -226,39 +203,6 @@ Después de depurar la documentación, el listado de compras conviene quedar as�
 - [Ángulo de ajuste para perfil V-slot](https://uelectronics.com/producto/angulo-de-ajuste-para-perfil-v-slot/)
 - [Listado general de perfil aluminio 2020 V-slot en Mercado Libre](https://listado.mercadolibre.com.mx/perfiles-aluminio-v-slot)
 - [Listado general de perfil 2020 aluminio en Mercado Libre](https://listado.mercadolibre.com.mx/perfil-2020-aluminio)
-
-## Tabla sugerida para BOM final
-
-| Componente | Cantidad sugerida | Comentario |
-|---|---:|---|
-| Arduino UNO | 1 | Control principal |
-| CNC Shield V3 | 1 | Expansión para GRBL |
-| A4988 | 3 | Uno por eje |
-| NEMA 17 | 3 | X, Y y Z |
-| Fuente 12 V | 1 | 5 A mínimo recomendado |
-| Cable USB tipo B | 1 | Programación y control |
-| Final de carrera | 2–3 | Opcional, recomendable |
-| Banda GT2 6 mm | 1 rollo / tramo | Según recorrido del eje X |
-| Polea GT2 20T, barreno 5 mm | 1–2 | Al menos una motriz; verificar retorno/tensión |
-| Husillo Acme T8 + tuerca | 1 | Eje Y |
-| Cople flexible 5x8 mm | 1 | Motor-husillo |
-| Varilla lisa 8 mm | 2 o más | Según longitudes del eje |
-| SK8 | 4 o más | Según número de apoyos |
-| KP08 | 2 o más | Según extremos del husillo/ejes |
-| SC8UU o LM8UU | Según diseño | Elegir según tu implementación final |
-| Ruedas Delrin tipo V | Según carro | Verificar si usarás ruedas sueltas o kit |
-| Perfil 2020 V-slot | Según corte | Importante si usarás ruedas tipo V |
-| Ángulos 2020 | Según estructura | Uniones del bastidor |
-| Tornillos M5x8 | Según estructura | Para perfilería |
-| Tuercas T M5 | Según estructura | Para perfilería V-slot |
-| Tornillería variada M3/M4/M5 | Según diseño | Motores, soportes y carros |
-
-## Notas importantes antes de comprar
-
-- Si usarás **ruedas Delrin tipo V**, lo más consistente es documentar el perfil como **2020 V-slot** y no solo como “perfil 2020”.
-- En tu eje X con banda todavía conviene dejar explícito qué usarás para el **retorno o tensión de la banda**: una polea loca, un balero o una solución impresa.
-- En la guía lineal conviene elegir y fijar una sola redacción final: **SCS8UU**, **LM8UU** o ambos, según lo que realmente use tu máquina.
-- Si las ruedas Delrin se compran **sueltas**, revisa si además necesitas **separadores, excéntricas, tornillos y tuercas**. Si compras un kit de placa V-slot, muchas de esas piezas ya vienen incluidas.
 
 ---
 
