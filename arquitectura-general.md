@@ -10,23 +10,23 @@ Una máquina **CNC** (*Computer Numerical Control*) es un sistema capaz de ejecu
 
 ![Arquitectura general de una CNC](assets/img/arquitectura/cnc-ejes.png)
 
-## 1. Bloques principales de una CNC
+## 1. Flujo de trabajo al utilizar una CNC
 
-De forma general, una CNC puede descomponerse en los siguientes bloques:
+De forma general, el flujo de trabajo de una CNC puede descomponerse en los siguientes pasos:
 
 ### 1.1 Diseño digital
 
-La pieza, contorno o trayectoria se genera primero en un entorno CAD o a partir de un flujo 2D/3D. Después, un software CAM o una herramienta intermedia convierte esa geometría en trayectorias y parámetros de proceso.
+Diseño por computadora de la pieza, contorno o trayectoria en un entorno CAD o a partir de un flujo 2D/3D. Después, un software CAM o una herramienta intermedia convierte esa geometría en trayectorias y parámetros de proceso.
 
 ![Arquitectura general de una CNC](assets/img/mods/2.png)
 
-### 1.2 Programa de máquina
+### 1.2 Programa en lenguaje máquina
 
 El resultado suele expresarse como **G-code**, un conjunto de instrucciones que indican coordenadas, velocidades, movimientos, arranques, pausas y otras acciones necesarias para ejecutar el trabajo [2].
 
 ![Consola de OpenBuilds CONTROL con comandos G](assets/img/enviar_comandos.png)
 
-### 1.3 Controlador y Etapa de potencia
+### 1.3 Controlador y etapa de potencia
 
 El controlador interpreta ese programa y lo traduce en señales temporizadas para cada eje. En esta máquina, ese papel lo realiza **GRBL** corriendo sobre un **Arduino UNO**, junto con la lógica de interfaz proporcionada por el **CNC Shield**.
 

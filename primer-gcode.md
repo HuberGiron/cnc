@@ -209,7 +209,7 @@ Puedes ajustar:
 
 4. Coloca el archivo `.nc` en una carpeta donde puedas encontrarlo fácilmente desde OpenBuilds CONTROL.
 
-![Guardando el archivo .nc en el editor](assets/img/guardado.png)
+![Guardando el archivo .nc en el editor](assets/img/gcode_cuadrado.png)
 
 ---
 
