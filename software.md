@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Software (GRBL + OpenBuilds)
-nav_order: 3
+nav_order: 6
 ---
 
 # Software: GRBL y OpenBuilds CONTROL

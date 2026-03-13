@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Primer archivo G-code (.nc)
-nav_order: 5
+nav_order: 8
 ---
 
 # Crear tu primer archivo G-code (.nc)

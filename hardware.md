@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Hardware y conexiones
-nav_order: 2
+nav_order: 5
 ---
 
 # Hardware y conexiones
