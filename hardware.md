@@ -174,6 +174,35 @@ Los detalles de configuración de homing y límites se describen en la sección 
 
 ---
 
+---
+
+# Componentes comerciales y ligas de compra
+
+### A. Control y electrónica
+
+- Arduino UNO
+- CNC Shield V3
+- Drivers A4988 o DRV8825 para X, Y y Z
+- Motores NEMA 17
+- Fuente conmutada de 12 V
+- Cable USB tipo B para el Arduino
+- Finales de carrera (opcionales, pero recomendables)
+
+## Ligas sugeridas de compra
+
+### Electrónica y control — UNIT Electronics
+
+- [Arduino UNO Rev3](https://uelectronics.com/producto/arduino-uno-rev3/)
+- [CNC Shield V3 para Arduino Uno](https://uelectronics.com/producto/cnc-shield-v3-para-arduino-uno/)
+- [A4988 driver para motor a pasos con disipador](https://uelectronics.com/producto/a4988-driver-para-motor-a-pasos-con-disipador/)
+- [NEMA 17 17HS4401, 1.7 A, 4 kg/cm](https://uelectronics.com/producto/nema-17-17hs4401-motor-a-pasos-1-7amp-4kg-cm/)
+- [Fuente conmutada 12 V 5 A](https://uelectronics.com/producto/fuente-conmutada-12v-5a/)
+- [Cable USB 2.0 tipo B](https://uelectronics.com/producto/cable-usb-2-0-para-datos-o-alimentacion/)
+- [Sensor final de carrera tipo endstop](https://uelectronics.com/producto/sensor-final-de-carrera-limit-switch-end-stop-impresora-3d-cnc/)
+
+
+---
+
 Con estos pasos, la parte de **hardware y conexiones físicas** queda lista para pasar a:
 
 - Cargar GRBL en el Arduino.

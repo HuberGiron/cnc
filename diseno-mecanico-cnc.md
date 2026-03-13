@@ -119,19 +119,19 @@ El eje Z de la máquina utiliza un mecanismo de **piñón-cremallera** que sopor
 
 ## Descarga de STL para impresión 3D
 
-A continuación se listan las piezas finales STL que forman parte de esta versión de la máquina. 
+A continuación se listan las piezas finales STL que forman parte de esta versión de la máquina.
 
 ### Piezas STL finales
 
-- [EjeX_Base_carroBanda.stl](/assets/files/stl/EjeX_Base_carroBanda.stl)
-- [EjeX_Base_motor_arriba.stl](../assets/files/stl/EjeX_Base_motor_arriba.stl)
-- [EjeX_Base_tornillo_arriba.stl](assets/files/stl/EjeX_Base_tornillo_arriba.stl)
-- [EjeY_base_abajo.stl](assets/files/stl/EjeY_base_abajo.stl)
-- [EjeY_Base_motor_abajo.stl](assets/files/stl/EjeY_Base_motor_abajo.stl)
-- [EjeZ_cremallera.stl](assets/files/stl/EjeZ_cremallera.stl)
-- [EjeZ_engrane.stl](assets/files/stl/EjeZ_engrane.stl)
-- [Estructura_Base_electronica.stl](assets/files/stl/Estructura_Base_electronica.stl)
-- [Estructura_tapa_2020.stl](assets/files/stl/Estructura_tapa_2020.stl)
+- [EjeX_Base_carroBanda.STL]({{ '/assets/files/stl/EjeX_Base_carroBanda.STL' | relative_url }})
+- [EjeX_Base_motor_arriba.STL]({{ '/assets/files/stl/EjeX_Base_motor_arriba.STL' | relative_url }})
+- [EjeX_Base_tornillo_arriba.STL]({{ '/assets/files/stl/EjeX_Base_tornillo_arriba.STL' | relative_url }})
+- [EjeY_Base_motor_abajo.STL]({{ '/assets/files/stl/EjeY_Base_motor_abajo.STL' | relative_url }})
+- [EjeY_base_abajo.STL]({{ '/assets/files/stl/EjeY_base_abajo.STL' | relative_url }})
+- [EjeZ_cremallera.STL]({{ '/assets/files/stl/EjeZ_cremallera.STL' | relative_url }})
+- [EjeZ_engrane.STL]({{ '/assets/files/stl/EjeZ_engrane.STL' | relative_url }})
+- [Estructura_Base_electronica.STL]({{ '/assets/files/stl/Estructura_Base_electronica.STL' | relative_url }})
+- [Estructura_tapa_2020.stl]({{ '/assets/files/stl/Estructura_tapa_2020.stl' | relative_url }})
 
 ---
 
@@ -139,13 +139,7 @@ A continuación se listan las piezas finales STL que forman parte de esta versi�
 
 ### A. Control y electrónica
 
-- Arduino UNO
-- CNC Shield V3
-- Drivers A4988 o DRV8825 para X, Y y Z
 - Motores NEMA 17
-- Fuente conmutada de 12 V
-- Cable USB tipo B para el Arduino
-- Finales de carrera (opcionales, pero recomendables)
 
 ### B. Movimiento lineal y transmisión
 
@@ -177,13 +171,7 @@ A continuación se listan las piezas finales STL que forman parte de esta versi�
 
 ### Electrónica y control — UNIT Electronics
 
-- [Arduino UNO Rev3](https://uelectronics.com/producto/arduino-uno-rev3/)
-- [CNC Shield V3 para Arduino Uno](https://uelectronics.com/producto/cnc-shield-v3-para-arduino-uno/)
-- [A4988 driver para motor a pasos con disipador](https://uelectronics.com/producto/a4988-driver-para-motor-a-pasos-con-disipador/)
 - [NEMA 17 17HS4401, 1.7 A, 4 kg/cm](https://uelectronics.com/producto/nema-17-17hs4401-motor-a-pasos-1-7amp-4kg-cm/)
-- [Fuente conmutada 12 V 5 A](https://uelectronics.com/producto/fuente-conmutada-12v-5a/)
-- [Cable USB 2.0 tipo B](https://uelectronics.com/producto/cable-usb-2-0-para-datos-o-alimentacion/)
-- [Sensor final de carrera tipo endstop](https://uelectronics.com/producto/sensor-final-de-carrera-limit-switch-end-stop-impresora-3d-cnc/)
 
 ### Movimiento lineal y transmisión — UNIT Electronics
 
