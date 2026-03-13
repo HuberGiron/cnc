@@ -55,18 +55,6 @@ Por lo tanto, cada paso completo del motor desplaza idealmente:
 
 **40 mm / 200 = 0.2 mm por paso**
 
-Si además se usa **microstepping**, por ejemplo a **1/8 de paso**, el driver divide cada paso en fracciones más pequeñas, y el movimiento teórico por microstep sería:
-
-**0.2 / 8 = 0.025 mm por microstep**
-
-Esto permite movimientos más suaves y una resolución teórica mayor. Sin embargo, es importante distinguir entre:
-
-- **resolución teórica**
-- **precisión real**
-- **repetibilidad real**
-
-Porque aunque el sistema pueda mandar micro-pasos muy pequeños, el resultado real también depende de la rigidez mecánica, el juego, la tensión de la banda, la flexión estructural, la fricción y la calibración del eje.
-
 ### ¿Por qué se usan motores a pasos en CNC?
 
 Los motores a pasos son muy populares en CNC educativas, de escritorio y de prototipado por varias razones:
@@ -90,21 +78,12 @@ Los motores a pasos son muy populares en CNC educativas, de escritorio y de prot
 
 Aunque son muy útiles, los motores a pasos también tienen limitaciones. Si se les exige demasiada velocidad, aceleración o carga, pueden **perder pasos**. Cuando eso ocurre, el controlador sigue creyendo que el eje está donde debería, pero mecánicamente ya no coincide con la posición real. Por eso, en una CNC bien ajustada es importante definir correctamente:
 
-- corriente del driver,
-- aceleraciones,
-- velocidad máxima,
-- tipo de transmisión,
-- masa móvil,
-- rigidez del sistema.
-
-En otras palabras, el comportamiento real del eje no depende solamente del motor. En términos de ingeniería, el desempeño aparece por la combinación de:
-
-- motor,
-- transmisión,
-- guiado,
-- masa móvil,
-- rigidez estructural,
-- estrategia de control.
+- Corriente del driver,
+- Aceleraciones,
+- Velocidad máxima,
+- Tipo de transmisión,
+- Masa móvil,
+- Rigidez del sistema.
 
 Por eso, al diseñar una CNC no basta con elegir un “motor potente”; hay que entender cómo sus pasos se traducen en movimiento lineal útil dentro de una arquitectura mecánica completa.
 
