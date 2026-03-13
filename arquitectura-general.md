@@ -70,6 +70,8 @@ Para documentar y diseñar mejor una máquina de este tipo, conviene pensarla co
 
 Este enfoque se relaciona bien con la filosofía de **Machines That Make (MTM)** del MIT Center for Bits and Atoms, donde se trabaja con máquinas, componentes y subconjuntos reconfigurables que permiten prototipar rápidamente nuevas configuraciones y evolucionarlas por iteraciones [3], [4].
 
+![Maquina ejemplo CNC](assets/img/arquitectura/mtm1.jpg)
+
 La modularidad ofrece ventajas claras:
 
 - facilita rediseñar un eje sin rehacer toda la máquina;
@@ -90,58 +92,18 @@ El valor del enfoque modular no es únicamente teórico. En una CNC didáctica o
 
 Eso hace que la máquina no sea solo una herramienta terminada, sino también una **plataforma de aprendizaje y evolución**.
 
----
+![MTM1](assets/img/arquitectura/mtm2.jpg)
 
-## Espacio sugerido para imagen / diagrama general
+![MTM2](assets/img/arquitectura/mtm_video.gif)
 
-**Ruta sugerida:** `assets/img/arquitectura/arquitectura-cnc-general.png`
+![MTM3](assets/img/arquitectura/mtm3.png)
 
-Sugerencias de contenido visual:
+## 5. MTM en FabAcademy
+<video controls width="640">
+  <source src="{{ 'https://ng.cba.mit.edu/show/video/15.10.cardboard.mp4' | relative_url }}" type="video/mp4">
+  Tu navegador no soporta video HTML5.
+</video>
 
-- diagrama de bloques desde CAD/CAM hasta movimiento físico;
-- esquema de ejes X/Y/Z;
-- vista general de la máquina terminada;
-- imagen que explique la cadena `G-code → control → drivers → motor → transmisión`.
-
-<!--
-![Arquitectura general de una CNC](assets/img/arquitectura/arquitectura-cnc-general.png)
-*Figura X. Arquitectura general de una máquina CNC cartesiana. Elaboración propia.*
--->
-
-## Espacio sugerido para imagen sobre modularidad / MTM
-
-**Ruta sugerida:** `assets/img/arquitectura/mtm-modularidad.png`
-
-Sugerencias de contenido visual:
-
-- configuraciones reconfigurables tipo stages;
-- diagrama de módulos intercambiables;
-- comparación entre una máquina monolítica y una modular.
-
-<!--
-![Enfoque modular inspirado en MTM](assets/img/arquitectura/mtm-modularidad.png)
-*Figura X. Ejemplo de modularidad y reconfiguración de ejes. Adaptado de MTM [3], [4].*
--->
-
-## Espacio sugerido para video
-
-Si quieres insertar un video de explicación general o un recorrido de la máquina, puedes usar una de estas dos opciones.
-
-### Opción A: enlace simple
-
-- Ruta o URL sugerida: `https://www.youtube.com/watch?v=VIDEO_ID`
-
-### Opción B: embebido HTML
-
-```html
-<iframe width="560" height="315"
-  src="https://www.youtube.com/embed/VIDEO_ID"
-  title="Video de arquitectura general CNC"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen>
-</iframe>
-```
 
 ## Referencias
 
