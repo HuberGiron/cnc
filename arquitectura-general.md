@@ -8,11 +8,7 @@ nav_order: 2
 
 Una máquina **CNC** (*Computer Numerical Control*) es un sistema capaz de ejecutar movimientos controlados a partir de instrucciones numéricas. En lugar de mover manualmente una herramienta, el operador define una geometría, genera trayectorias y la máquina convierte esa información en desplazamientos coordinados sobre sus ejes [1], [2].
 
-En una máquina cartesiana pequeña o mediana, como un plotter o router de escritorio, este proceso puede resumirse así:
-
-**diseño digital → generación de trayectorias → G-code → controlador → drivers → motores → transmisión mecánica → movimiento lineal → herramienta sobre la pieza**
-
-Esta cadena ayuda a entender que una CNC no es solamente “electrónica con motores”, sino una integración entre software, control y diseño mecánico.
+![Arquitectura general de una CNC](assets/img/arquitectura/cnc-ejes.png)
 
 ## 1. Bloques principales de una CNC
 
@@ -22,21 +18,27 @@ De forma general, una CNC puede descomponerse en los siguientes bloques:
 
 La pieza, contorno o trayectoria se genera primero en un entorno CAD o a partir de un flujo 2D/3D. Después, un software CAM o una herramienta intermedia convierte esa geometría en trayectorias y parámetros de proceso.
 
+![Arquitectura general de una CNC](assets/img/arquitectura/cnc-digital.png)
+
 ### 1.2 Programa de máquina
 
 El resultado suele expresarse como **G-code**, un conjunto de instrucciones que indican coordenadas, velocidades, movimientos, arranques, pausas y otras acciones necesarias para ejecutar el trabajo [2].
 
-### 1.3 Controlador
+![Consola de OpenBuilds CONTROL con comandos G](assets/img/enviar_comandos.png)
+
+### 1.3 Controlador y Etapa de potencia
 
 El controlador interpreta ese programa y lo traduce en señales temporizadas para cada eje. En esta máquina, ese papel lo realiza **GRBL** corriendo sobre un **Arduino UNO**, junto con la lógica de interfaz proporcionada por el **CNC Shield**.
 
-### 1.4 Etapa de potencia
-
 Los **drivers** convierten las señales de bajo nivel del controlador en corriente adecuada para mover los motores paso a paso. Aquí aparece el puente entre lógica y potencia.
 
-### 1.5 Sistema mecánico
+![CNC Shield y drivers](assets/img/shield_conectado.jpg)
+
+### 1.4 Sistema mecánico
 
 Finalmente, la parte mecánica transforma la rotación de los motores en desplazamiento lineal. Aquí intervienen la estructura, las guías, los carros, los soportes y los mecanismos de transmisión.
+
+![Maquina ejemplo CNC](assets/img/cnc.jpg)
 
 ## 2. Ejes, estructura y movimiento
 

@@ -54,6 +54,3 @@ Si es tu primera vez con una máquina CNC, conviene seguir este orden:
 6. Calibración.
 7. Primer G-code.
 8. Flujo FabModules.
-
----
-
