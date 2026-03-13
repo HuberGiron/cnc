@@ -6,7 +6,7 @@ nav_order: 1
 
 # CNC Plotter – Manual de Uso
 
-Este sitio documenta una **CNC cartesiana de 3 ejes** basada en una arquitectura simple, modular y replicable. La idea no es solo explicar cómo conectar la electrónica y cargar GRBL, sino también mostrar **cómo está pensada la máquina completa**: estructura, mecanismos de transmisión, criterios de diseño y flujo de puesta en marcha.
+Este sitio documenta una **CNC cartesiana de 3 ejes** basada en una arquitectura simple, modular y replicabl, se explica la estructura, mecanismos de transmisión, criterios de diseño, electrónica y flujo de puesta en marcha.
 
 La documentación está organizada desde lo general hacia lo particular:
 
@@ -40,7 +40,6 @@ Esta máquina usa una lógica típica de fabricación digital ligera:
 - Conexión USB al Arduino.
 - Fuente de alimentación para motores (12–24 V).
 - Máquina armada o parcialmente armada para realizar pruebas.
-- Acceso a los archivos STL, STEP y G-code del proyecto.
 
 ## Sugerencia de lectura
 
