@@ -28,17 +28,14 @@ También se aclara el papel de las **guías lineales**, ya que con frecuencia se
 
 En máquinas CNC de prototipado es muy común usar **motores a pasos** (*stepper motors*). Se utilizan porque permiten construir sistemas de movimiento relativamente simples, económicos y suficientemente precisos para muchas tareas de posicionamiento en ejes X, Y y Z.
 
-Un motor a pasos no gira “libremente” como un motor DC convencional, sino que avanza en **incrementos angulares discretos** llamados **pasos**. Internamente, el controlador energiza sus bobinas en una secuencia determinada, generando campos magnéticos que hacen que el rotor avance de una posición estable a la siguiente. Por eso, cada pulso eléctrico enviado por el driver produce un pequeño avance angular del eje del motor.
+Un motor a pasos no gira “libremente” como un motor DC convencional, sino que avanza en **incrementos angulares discretos** llamados **pasos**. Internamente, el driver energiza sus bobinas en una secuencia determinada, generando campos magnéticos que hacen que el rotor avance de una posición estable a la siguiente. Por eso, cada pulso enviado al sistema produce un pequeño avance angular del eje del motor.
 
 En muchos motores NEMA 17 usados en CNC, el ángulo típico por paso es de **1.8°**, lo que significa que se requieren:
 
 - **200 pasos por vuelta** para completar 360°
-- porque:  
-  \[
-  \frac{360^\circ}{1.8^\circ}=200
-  \]
+- porque: **360° / 1.8° = 200**
 
-Este concepto es fundamental en CNC, porque el controlador no ordena directamente “muévete 10 mm”, sino que en realidad genera una cierta cantidad de pulsos. Luego, mediante la transmisión mecánica, esos pasos del motor se convierten en desplazamiento lineal del eje.
+Este concepto es fundamental en CNC, porque el controlador no mueve directamente “10 mm”; en realidad genera una cierta cantidad de pulsos. Después, mediante la transmisión mecánica, esos pasos del motor se convierten en desplazamiento lineal del eje.
 
 ### ¿Qué tienen que ver los pasos con el movimiento lineal?
 
@@ -52,21 +49,15 @@ La relación entre los pasos del motor y el desplazamiento lineal depende del me
 
 Por ejemplo, si un motor de **200 pasos/vuelta** mueve una polea GT2 de **20 dientes** con banda de **2 mm de paso**, entonces una vuelta completa produce:
 
-\[
-20 \times 2 = 40 \text{ mm/vuelta}
-\]
+**20 × 2 = 40 mm/vuelta**
 
 Por lo tanto, cada paso completo del motor desplaza idealmente:
 
-\[
-\frac{40 \text{ mm}}{200} = 0.2 \text{ mm/paso}
-\]
+**40 mm / 200 = 0.2 mm por paso**
 
 Si además se usa **microstepping**, por ejemplo a **1/8 de paso**, el driver divide cada paso en fracciones más pequeñas, y el movimiento teórico por microstep sería:
 
-\[
-\frac{0.2}{8} = 0.025 \text{ mm}
-\]
+**0.2 / 8 = 0.025 mm por microstep**
 
 Esto permite movimientos más suaves y una resolución teórica mayor. Sin embargo, es importante distinguir entre:
 
@@ -109,7 +100,6 @@ Aunque son muy útiles, los motores a pasos también tienen limitaciones. Si se 
 En otras palabras, el comportamiento real del eje no depende solamente del motor. En términos de ingeniería, el desempeño aparece por la combinación de:
 
 - motor,
-- driver,
 - transmisión,
 - guiado,
 - masa móvil,
@@ -119,8 +109,6 @@ En otras palabras, el comportamiento real del eje no depende solamente del motor
 Por eso, al diseñar una CNC no basta con elegir un “motor potente”; hay que entender cómo sus pasos se traducen en movimiento lineal útil dentro de una arquitectura mecánica completa.
 
 ![Motores NEMA 17](assets/img/motor.png)
-
-> Sugerencia: aquí puedes agregar más adelante un diagrama tipo “STEP → giro del motor → transmisión → desplazamiento lineal” para conectar esta sección con la parte de banda, husillo y cremallera.
 
 ## 2. Husillo
 
