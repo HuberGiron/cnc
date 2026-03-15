@@ -20,15 +20,15 @@ Eso es valioso porque no todos los ejes exigen lo mismo. Un eje puede priorizar 
 
 ![cnc 1](assets/img/mecanica/render.jpg)
 
-![cnc 2](assets/img/mecanica/18.jpg)
+![cnc 2](assets/img/mecanica/18.JPG)
 
-![cnc 3](assets/img/mecanica/19.jpg)
+![cnc 3](assets/img/mecanica/19.JPG)
 
-![cnc 4](assets/img/mecanica/20.jpg)
+![cnc 4](assets/img/mecanica/20.JPG)
 
-![cnc 5](assets/img/mecanica/29.jpg)
+![cnc 5](assets/img/mecanica/29.JPG)
 
-![cnc 6](assets/img/mecanica/30.jpg)
+![cnc 6](assets/img/mecanica/30.JPG)
 
 ## 2. Estructura principal
 
@@ -42,15 +42,15 @@ La estructura base se construye con **perfil de aluminio 2020** en distintas lon
 
 El bastidor, el puente y varios soportes secundarios pueden crecer o cambiar sin rediseñar por completo la máquina.
 
-![cnc 7](assets/img/mecanica/9.jpg)
+![cnc 7](assets/img/mecanica/9.JPG)
 
-![cnc 8](assets/img/mecanica/5.jpg)
+![cnc 8](assets/img/mecanica/5.JPG)
 
-![cnc 9](assets/img/mecanica/6.jpg)
+![cnc 9](assets/img/mecanica/6.JPG)
 
-![cnc 10](assets/img/mecanica/7.jpg)
+![cnc 10](assets/img/mecanica/7.JPG)
 
-![cnc 11](assets/img/mecanica/10.jpg)
+![cnc 11](assets/img/mecanica/10.JPG)
 
 ## 3. Eje accionado por husillo
 
@@ -78,17 +78,17 @@ Ese conjunto no genera movimiento por sí solo; su función es **guiar** y **res
 
 Esta distinción es importante para entender por qué una máquina puede usar las mismas guías con mecanismos de transmisión distintos.
 
-![cnc 12](assets/img/mecanica/4.jpg)
+![cnc 12](assets/img/mecanica/4.JPG)
 
-![cnc 13](assets/img/mecanica/3.jpg)
+![cnc 13](assets/img/mecanica/3.JPG)
 
-![cnc 14](assets/img/mecanica/8.jpg)
+![cnc 14](assets/img/mecanica/8.JPG)
 
-![cnc 15](assets/img/mecanica/1.jpg)
+![cnc 15](assets/img/mecanica/1.JPG)
 
-![cnc 16](assets/img/mecanica/2.jpg)
+![cnc 16](assets/img/mecanica/2.JPG)
 
-![cnc 17](assets/img/mecanica/11.jpg)
+![cnc 17](assets/img/mecanica/11.JPG)
 
 ## 4. Eje accionado por banda
 
@@ -109,29 +109,29 @@ Esto sugiere un eje pensado para:
 
 Ese arreglo es muy razonable en una CNC ligera o un plotter, especialmente si se quiere mantener el sistema simple y rápido.
 
-![cnc 18](assets/img/mecanica/13.jpg)
+![cnc 18](assets/img/mecanica/13.JPG)
 
-![cnc 19](assets/img/mecanica/12.jpg)
+![cnc 19](assets/img/mecanica/12.JPG)
 
-![cnc 20](assets/img/mecanica/15.jpg)
+![cnc 20](assets/img/mecanica/15.JPG)
 
-![cnc 21](assets/img/mecanica/17.jpg)
+![cnc 21](assets/img/mecanica/17.JPG)
 
-![cnc 22](assets/img/mecanica/16.jpg)
+![cnc 22](assets/img/mecanica/16.JPG)
 
 ## 5. Eje accionado por piñón-cremallera
 
 El eje Z de la máquina utiliza un mecanismo de **piñón-cremallera** que soporta la herramienta del plotter (lápiz), donde el engrane y la cremallera se realizaron en impresión 3D.
 
-![cnc 16](assets/img/mecanica/27.jpg)
+![cnc 16](assets/img/mecanica/27.JPG)
 
-![cnc 17](assets/img/mecanica/25.jpg)
+![cnc 17](assets/img/mecanica/25.JPG)
 
-![cnc 18](assets/img/mecanica/22.jpg)
+![cnc 18](assets/img/mecanica/22.JPG)
 
-![cnc 18](assets/img/mecanica/24.jpg)
+![cnc 18](assets/img/mecanica/24.JPG)
 
-![cnc 18](assets/img/mecanica/23.jpg)
+![cnc 18](assets/img/mecanica/23.JPG)
 
 ---
 
