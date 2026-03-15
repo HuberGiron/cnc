@@ -256,10 +256,12 @@ Puedes ajustar:
    - X e Y trazan el cuadrado.
    - Z se levanta al final.
 
-<video controls width="640">
+<div class="content-media">
+  <video controls>
   <source src="{{ '/assets/img/cuadrado.mp4' | relative_url }}" type="video/mp4">
   Tu navegador no soporta video HTML5.
-</video>
+  </video>
+</div>
 
 Si todo se ve bien, puedes:
 
