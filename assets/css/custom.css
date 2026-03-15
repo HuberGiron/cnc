@@ -323,6 +323,7 @@ footer.site-footer { display: none !important; }
   border-radius: 12px;
   overflow: hidden;
   background: #111;
+  aspect-ratio: 4 / 3;
 }
 
 .viewer-embed iframe {
