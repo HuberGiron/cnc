@@ -140,7 +140,7 @@ El eje Z de la máquina utiliza un mecanismo de **piñón-cremallera** que sopor
 A continuación se muestra el ensamble de la maquina en 3D.
 <div class="viewer-embed">
   <iframe
-    src="{{ '/assets/viewers/cnc/index.html' | relative_url }}"
+    src="{{ '/assets/viewers/index.html' | relative_url }}"
     title="Visualizador 3D CNC"
     loading="lazy"
     allowfullscreen>
