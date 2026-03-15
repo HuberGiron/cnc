@@ -318,7 +318,7 @@ footer.site-footer { display: none !important; }
 }
 
 .viewer-embed {
-  max-width: 640px;
+  width: 640px;
   margin: 1.5rem auto;
   border-radius: 12px;
   overflow: hidden;
