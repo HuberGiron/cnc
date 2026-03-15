@@ -22,7 +22,6 @@ body {
   width: min(100%, 640px);
   margin: 0;
   background: var(--bg);
-  border: 1px solid var(--border);
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
 }
