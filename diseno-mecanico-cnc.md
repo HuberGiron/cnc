@@ -135,6 +135,22 @@ El eje Z de la máquina utiliza un mecanismo de **piñón-cremallera** que sopor
 
 ---
 
+## Visualización 3D
+
+A continuación se muestra el ensamble de la maquina en 3D.
+<div class="viewer-embed">
+  <iframe
+    src="{{ '/assets/viewers/cnc/index.html' | relative_url }}"
+    title="Visualizador 3D CNC"
+    loading="lazy"
+    allowfullscreen>
+  </iframe>
+</div>
+
+Puedes rotar con clic izquierdo, acercar con la rueda y mover con clic derecho.
+
+---
+
 ## Descarga de STL para impresión 3D
 
 A continuación se listan las piezas finales STL que forman parte de esta versión de la máquina.
