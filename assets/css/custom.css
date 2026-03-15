@@ -323,7 +323,7 @@ footer.site-footer { display: none !important; }
   border-radius: 12px;
   border-color: transparent;
   overflow: hidden;
-  background: #111;
+  background: #ffffff;
   aspect-ratio: 4 / 3;
 }
 
@@ -339,7 +339,7 @@ footer.site-footer { display: none !important; }
   margin: 1.5rem auto;
   border-radius: 12px;
   overflow: hidden;
-  background: #111;
+  background: #ffffff;
 }
 
 .content-media video,
