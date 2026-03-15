@@ -7,7 +7,7 @@ const MODEL_URL = 'cnc.fbx';
 
 // Carpeta donde están el FBX y sus texturas exportadas por SolidWorks/Visualize.
 // Si dejas todo junto, puede quedarse como './'
-const ASSET_BASE_PATH = '/';
+const ASSET_BASE_PATH = '';
 
 // Ajustes de encuadre inicial.
 const INITIAL_ZOOM = 1;      // menor = más cerca, mayor = más lejos
