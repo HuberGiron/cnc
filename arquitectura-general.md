@@ -87,10 +87,12 @@ La modularidad permite:
 ![MTM3](assets/img/arquitectura/mtm3.png)
 
 ## 5. MTM en FabAcademy
-<video controls width="640">
-  <source src="{{ 'https://ng.cba.mit.edu/show/video/15.10.cardboard.mp4' | relative_url }}" type="video/mp4">
-  Tu navegador no soporta video HTML5.
-</video>
+<div class="content-media">
+  <video controls>
+    <source src="https://ng.cba.mit.edu/show/video/15.10.cardboard.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+</div>
 
 
 ## Referencias

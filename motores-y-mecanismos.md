@@ -8,13 +8,14 @@ nav_order: 3
 
 Una CNC necesita convertir el movimiento rotativo del motor en **movimiento lineal controlado**. Esa conversión puede lograrse con distintos mecanismos, y la elección del mecanismo afecta directamente la velocidad, el empuje, la rigidez, la precisión, la longitud de recorrido y el costo del eje [1], [2].
 
-<iframe width="560" height="315"
-  src="https://www.youtube.com/embed/OAEwRMqpst0"
-  title="Video sobre motores y mecanismos CNC"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen>
-</iframe>
+<div class="content-media ratio-16x9">
+  <iframe
+    src="https://www.youtube.com/embed/OAEwRMqpst0"
+    title="Video sobre motores y mecanismos CNC"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
 
 En esta sección se comparan tres mecanismos muy comunes en máquinas CNC y automatización ligera:
 

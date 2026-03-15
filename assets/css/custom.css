@@ -321,6 +321,7 @@ footer.site-footer { display: none !important; }
   max-width: 640px;
   margin: 1.5rem auto;
   border-radius: 12px;
+  border-color: transparent;
   overflow: hidden;
   background: #111;
   aspect-ratio: 4 / 3;
@@ -331,4 +332,32 @@ footer.site-footer { display: none !important; }
   width: 100%;
   height: 480px;
   border: 0;
+}
+
+.content-media {
+  max-width: 640px;
+  margin: 1.5rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111;
+}
+
+.content-media video,
+.content-media iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+.content-media video {
+  height: auto;
+}
+
+.content-media.ratio-16x9 {
+  aspect-ratio: 16 / 9;
+}
+
+.content-media.ratio-16x9 iframe {
+  width: 100%;
+  height: 100%;
 }
